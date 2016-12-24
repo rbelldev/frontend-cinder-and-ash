@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from "./navigation-bar/navigation-bar.component";
 
-import { Ng2BootstrapModule } from 'ng2-bootstrap';
+// import { Ng2BootstrapModule } from 'ng2-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,8 +16,7 @@ import { Ng2BootstrapModule } from 'ng2-bootstrap';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    Ng2BootstrapModule
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
