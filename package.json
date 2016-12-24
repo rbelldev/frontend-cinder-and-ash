@@ -2,7 +2,7 @@
   "name": "angular2-express-starter",
   "version": "0.0.0",
   "engines": {
-    "node": "3.10.10"
+    "node": "6.9.2"
   },
   "license": "MIT",
   "angular-cli": {},
