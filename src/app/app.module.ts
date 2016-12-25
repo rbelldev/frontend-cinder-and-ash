@@ -6,8 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from "./navigation-bar/navigation-bar.component";
 
-// import { Ng2BootstrapModule } from 'ng2-bootstrap';
-
 @NgModule({
   declarations: [
     AppComponent,
