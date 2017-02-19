@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { NavigationBarComponent } from "./navigation-bar/navigation-bar.component";
+import { MaterialModule } from '@angular/material'
+import 'hammerjs';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar/navigation-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +17,8 @@ import { NavigationBarComponent } from "./navigation-bar/navigation-bar.componen
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
