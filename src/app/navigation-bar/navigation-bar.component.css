@@ -1,0 +1,22 @@
+.sidenav-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+  padding: 20px;
+}
+
+.hand-hover{
+  cursor: pointer;
+}
+
+md-sidenav button {
+  width: 100%;
+  text-align: left;
+}
+
+md-sidenav md-list-item {
+  width: 100%;
+}

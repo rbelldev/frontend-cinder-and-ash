@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.24",
-    "name": "angular2-express-starter"
+    "name": "cinder-and-ash-frontend"
   },
   "apps": [
     {
@@ -19,7 +19,8 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "theme.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
