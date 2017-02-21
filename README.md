@@ -3,9 +3,9 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
 ## Prerequisites
-Node.js 6.9.5 https://nodejs.org/en/
+Node.js 6.9.5 - https://nodejs.org/en/
 
-Angular-CLI
+Angular-CLI -
 After installing node, run `npm install -g angular-cli`
 
 ## Development server
