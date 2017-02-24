@@ -12,9 +12,12 @@ export class WarcraftLogsService {
 
   constructor(private http: Http){ }
 
-  getLogs():Observable<ReportMeta[]> {
-    let userName = 'robbell5';
-    const apiUrl = `https://www.warcraftlogs.com:443/v1/reports/user/${userName}?api_key=${this.PUBLIC_KEY}`;
+  getGuildLogList():Observable<ReportMeta[]> {
+
+    let guildName = 'cinder%20and%20ash';
+    let serverName = `malganis`;
+    let serverRegion = 'us';
+    const apiUrl = `https://www.warcraftlogs.com:443/v1/reports/guild/${guildName}/${serverName}/${serverRegion}?api_key=${this.PUBLIC_KEY}`;
 
     return this.http.get(apiUrl).map(
       response => {
@@ -25,7 +28,18 @@ export class WarcraftLogsService {
           reportMetaArray.push(new ReportMeta(obj));
         }
 
-        return json
+        return reportMetaArray.sort((meta1, meta2) => {
+
+          if (meta1.start > meta2.start) {
+            return -1;
+          }
+
+          if (meta1.start < meta2.start) {
+            return 1;
+          }
+
+          return 0;
+        });
       });
   };
 

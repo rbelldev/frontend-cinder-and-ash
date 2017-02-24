@@ -5,14 +5,14 @@ import {WarcraftLogsService} from "../services/warcraft-logs/warcraft-logs.servi
 import {Observable} from "rxjs";
 
 @Injectable()
-export class ReportMetaListResolver implements Resolve<ReportMeta> {
+export class GuildLogListResolver implements Resolve<ReportMeta> {
   constructor(private warcraftLogsService: WarcraftLogsService) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any>|Promise<any>|any {
-    return this.warcraftLogsService.getLogs();
+    return this.warcraftLogsService.getGuildLogList();
   }
 
 }

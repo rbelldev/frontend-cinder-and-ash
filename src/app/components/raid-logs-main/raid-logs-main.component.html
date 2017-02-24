@@ -1,16 +1,21 @@
 <h1>Raid Logs</h1>
 
 <div>
-  <table class="table table-striped">
+  <table class="table table-striped table-hover">
+
     <thead>
-    <th>Start Time</th>
-    <th>Description</th>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+      </tr>
     </thead>
+
     <tbody>
-    <tr *ngFor="let reportMeta of logResults">
-      <td>{{reportMeta.start}}</td>
-      <td>{{reportMeta.title}}</td>
-    </tr>
+      <tr *ngFor="let reportMeta of logResults" (click)="navigateToLog(reportMeta.id)">
+        <td>{{reportMeta.startDate}}</td>
+        <td>{{reportMeta.title}}</td>
+      </tr>
     </tbody>
+
   </table>
 </div>

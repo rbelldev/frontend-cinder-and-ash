@@ -10,9 +10,11 @@ import { RosterMainComponent } from './components/roster-main/roster-main.compon
 import { RaidLogsMainComponent } from './components/raid-logs-main/raid-logs-main.component';
 
 import {Routes, RouterModule} from "@angular/router";
-import { HomeMainComponent } from './components/home-main/home-main.component';
-import {ReportMetaListResolver} from "./resolvers/report-meta-list.resolver";
+import {HomeMainComponent} from './components/home-main/home-main.component';
+import {GuildLogListResolver} from "./resolvers/guild-log-list.resolver";
 import {WarcraftLogsService} from "./services/warcraft-logs/warcraft-logs.service";
+import { LogViewComponent } from './components/log-view/log-view.component';
+import {LogResolver} from "./resolvers/log.resolver";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -22,9 +24,17 @@ const appRoutes: Routes = [
     path: 'raid-logs',
     component: RaidLogsMainComponent,
     resolve: {
-      logResults: ReportMetaListResolver
+      logResults: GuildLogListResolver
+    }
+  },
+  {
+    path: 'log/:id',
+    component: LogViewComponent,
+    resolve: {
+      data: LogResolver
     }
   }
+
 ];
 
 @NgModule({
@@ -33,7 +43,8 @@ const appRoutes: Routes = [
     NavigationBarComponent,
     RosterMainComponent,
     RaidLogsMainComponent,
-    HomeMainComponent
+    HomeMainComponent,
+    LogViewComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -43,7 +54,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     WarcraftLogsService,
-    ReportMetaListResolver
+    GuildLogListResolver,
+    LogResolver
   ],
   bootstrap: [AppComponent]
 })
