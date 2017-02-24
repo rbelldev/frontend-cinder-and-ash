@@ -1,8 +1,8 @@
+import 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import {Http} from "@angular/http";
 import {Observable} from "rxjs";
 import {ReportMeta} from "../../models/warcraft-logs/report-meta";
-import {forEach} from "@angular/router/src/utils/collection";
 
 @Injectable()
 export class WarcraftLogsService {

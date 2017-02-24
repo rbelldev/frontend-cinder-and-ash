@@ -1,15 +1,16 @@
 <h1>Raid Logs</h1>
 
 <div>
-  <button md-button (click)="retrieveLogs()">Get Logs!</button>
-    <table class="table">
-      <thead></thead>
-      <tbody>
-        <tr *ngFor="let reportMeta of logResults">
-          <th scope="row">1</th>
-          <td>{{reportMeta.startTime}}</td>
-          <td>{{reportMeta.title}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <table class="table table-striped">
+    <thead>
+    <th>Start Time</th>
+    <th>Description</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let reportMeta of logResults">
+      <td>{{reportMeta.start}}</td>
+      <td>{{reportMeta.title}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>

@@ -5,15 +5,15 @@ export class ReportMeta {
     this.title =json['title'];
     this.owner = json['owner'];
     this.zone = json['zone'];
-    this.startTime = json['startTime'];
-    this.endTime = json['endTime'];
+    this.start = json['start'];
+    this.end = json['end'];
   }
 
   id:string;
   title:string;
   owner:string;
   zone:number;
-  startTime:number;
-  endTime:number;
+  start:number;
+  end:number;
 
 }

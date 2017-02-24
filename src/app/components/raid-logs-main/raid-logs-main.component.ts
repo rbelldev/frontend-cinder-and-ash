@@ -1,23 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {WarcraftLogsService} from "../../services/warcraft-logs/warcraft-logs.service";
 import {ReportMeta} from "../../models/warcraft-logs/report-meta";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'raid-logs-main',
   templateUrl: 'raid-logs-main.component.html',
-  styleUrls: ['raid-logs-main.component.css'],
-  providers: [WarcraftLogsService]
+  styleUrls: ['raid-logs-main.component.css']
 })
-export class RaidLogsMainComponent {
+export class RaidLogsMainComponent implements OnInit{
 
-  logResults: ReportMeta[] = [];
+  logResults: ReportMeta[];
 
-  constructor(private warcraftLogsService: WarcraftLogsService){ }
+  constructor(private route: ActivatedRoute) {}
 
-  retrieveLogs() {
-    this.warcraftLogsService.getLogs().first().subscribe( (reportMetas) => {
-      this.logResults = reportMetas;
-    });
+  ngOnInit() {
+    this.logResults = this.route.snapshot.data['logResults'];
   }
 
 }
