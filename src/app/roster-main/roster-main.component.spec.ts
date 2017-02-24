@@ -25,4 +25,8 @@ describe('RosterMainComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should fail', () => {
+    expect(false).toBeTruthy();
+  });
 });
