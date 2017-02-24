@@ -12,18 +12,22 @@
   <md-sidenav-container>
 
     <md-sidenav #sidenav mode="side" class="sidenav">
+
       <md-list>
 
         <md-list-item
           *ngFor="let navigationItem of navigationItems">
+
           <button md-button
                   [routerLink]="[navigationItem.routerLink]" routerLinkActive="mat-accent" (click)="sidenav.close()">
             <md-icon>{{navigationItem.icon}}</md-icon>
             <span>{{navigationItem.displayText}}</span>
           </button>
+
         </md-list-item>
 
       </md-list>
+
     </md-sidenav>
 
     <div class="container">
