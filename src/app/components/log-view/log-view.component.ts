@@ -13,7 +13,7 @@ export class LogViewComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.data = this.route.snapshot.data['data'];
+    this.data = JSON.stringify(this.route.snapshot.data['data']);
   }
 
 }

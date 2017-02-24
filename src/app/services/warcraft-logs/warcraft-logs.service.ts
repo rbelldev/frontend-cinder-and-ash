@@ -43,4 +43,13 @@ export class WarcraftLogsService {
       });
   };
 
+  getLog(reportId:string):Observable<any> {
+    const apiUrl = `https://www.warcraftlogs.com:443/v1/report/fights/${reportId}?api_key=${this.PUBLIC_KEY}`;
+
+    return this.http.get(apiUrl).map(
+      response => {
+        return response.json();
+      });
+  };
+
 }
