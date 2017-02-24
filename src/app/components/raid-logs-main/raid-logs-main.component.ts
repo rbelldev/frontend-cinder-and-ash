@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WarcraftLogsService} from "../../services/warcraft-logs/warcraft-logs.service";
+import {ReportMeta} from "../../models/warcraft-logs/report-meta";
 
 @Component({
   selector: 'raid-logs-main',
@@ -9,13 +10,13 @@ import {WarcraftLogsService} from "../../services/warcraft-logs/warcraft-logs.se
 })
 export class RaidLogsMainComponent {
 
-  logResults: string = '';
+  logResults: ReportMeta[] = [];
 
   constructor(private warcraftLogsService: WarcraftLogsService){ }
 
   retrieveLogs() {
-    this.warcraftLogsService.getLogs().first().subscribe( (json) => {
-      this.logResults = JSON.stringify(json);
+    this.warcraftLogsService.getLogs().first().subscribe( (reportMetas) => {
+      this.logResults = reportMetas;
     });
   }
 

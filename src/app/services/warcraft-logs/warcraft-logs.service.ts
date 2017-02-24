@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Http} from "@angular/http";
 import {Observable} from "rxjs";
+import {ReportMeta} from "../../models/warcraft-logs/report-meta";
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Injectable()
 export class WarcraftLogsService {
@@ -10,9 +12,21 @@ export class WarcraftLogsService {
 
   constructor(private http: Http){ }
 
-  getLogs():Observable<string> {
+  getLogs():Observable<ReportMeta[]> {
     let userName = 'robbell5';
-    return this.http.get(`https://www.warcraftlogs.com:443/v1/reports/user/${userName}?api_key=${this.PUBLIC_KEY}`).map(response => {return response.json()});
+    const apiUrl = `https://www.warcraftlogs.com:443/v1/reports/user/${userName}?api_key=${this.PUBLIC_KEY}`;
+
+    return this.http.get(apiUrl).map(
+      response => {
+        const json = response.json();
+        let reportMetaArray = [];
+
+        for (let obj of json){
+          reportMetaArray.push(new ReportMeta(obj));
+        }
+
+        return json
+      });
   };
 
 }

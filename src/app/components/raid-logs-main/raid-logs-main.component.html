@@ -2,5 +2,14 @@
 
 <div>
   <button md-button (click)="retrieveLogs()">Get Logs!</button>
-  <p>{{logResults}}</p>
+    <table class="table">
+      <thead></thead>
+      <tbody>
+        <tr *ngFor="let reportMeta of logResults">
+          <th scope="row">1</th>
+          <td>{{reportMeta.startTime}}</td>
+          <td>{{reportMeta.title}}</td>
+        </tr>
+      </tbody>
+    </table>
 </div>
