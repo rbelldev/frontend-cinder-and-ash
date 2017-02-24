@@ -22,7 +22,8 @@ describe('RaidLogsMainComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should contain a header', () => {
+    let headerElement = fixture.debugElement.query(By.css('h1'));
+    expect(headerElement.nativeElement.innerText).toBe('Raid Logs')
   });
 });

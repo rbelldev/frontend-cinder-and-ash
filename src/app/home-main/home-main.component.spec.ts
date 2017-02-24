@@ -22,7 +22,11 @@ describe('HomeMainComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('html structure', () => {
+    it('should have an h1 header with the guild name', () => {
+      let headerElement = fixture.debugElement.query(By.css('h1'));
+      expect(headerElement.nativeElement.innerText).toBe('Welcome to Cinder and Ash')
+    });
   });
+
 });

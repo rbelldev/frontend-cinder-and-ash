@@ -22,11 +22,8 @@ describe('RosterMainComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should fail', () => {
-    expect(false).toBeTruthy();
+  it('should contain a header', () => {
+    let headerElement = fixture.debugElement.query(By.css('h1'));
+    expect(headerElement.nativeElement.innerText).toBe('Roster')
   });
 });
