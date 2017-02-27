@@ -15,11 +15,19 @@ import {GuildLogListResolver} from "./resolvers/guild-log-list.resolver";
 import {WarcraftLogsService} from "./services/warcraft-logs/warcraft-logs.service";
 import { LogViewComponent } from './components/log-view/log-view.component';
 import {LogResolver} from "./resolvers/log.resolver";
+import {GuildResolver} from "./resolvers/guild.resolver";
+import {BattleNetService} from "./services/battle-net/battle-net.service";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeMainComponent },
-  { path: 'roster', component: RosterMainComponent },
+  {
+    path: 'roster',
+    component: RosterMainComponent,
+    resolve: {
+      guild:GuildResolver
+    }
+  },
   {
     path: 'raid-logs',
     component: RaidLogsMainComponent,
@@ -54,7 +62,9 @@ const appRoutes: Routes = [
   ],
   providers: [
     WarcraftLogsService,
+    BattleNetService,
     GuildLogListResolver,
+    GuildResolver,
     LogResolver
   ],
   bootstrap: [AppComponent]

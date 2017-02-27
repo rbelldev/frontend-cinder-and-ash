@@ -1,0 +1,3 @@
+Application: Cinder and Ash
+Key: q4p63gjbn83neb8h9wecj4g366edsbvd
+Secret: E2Kqq4rMpXz4WpBQfKAtKVmPUn2dQXqF
