@@ -19,7 +19,8 @@ export class RaidLogsMainComponent implements OnInit{
   }
 
   navigateToLog(id:string){
-    this.router.navigateByUrl(`/log/${id}`);
+    // this.router.navigateByUrl(`/log/${id}`);
+    window.location.href = `https://www.warcraftlogs.com/reports/${id}`
   }
 
 }
