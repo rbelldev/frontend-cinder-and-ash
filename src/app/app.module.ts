@@ -14,6 +14,7 @@ import {HomeMainComponent} from './components/home-main/home-main.component';
 import {GuildLogListResolver} from "./resolvers/guild-log-list.resolver";
 import {WarcraftLogsService} from "./services/warcraft-logs/warcraft-logs.service";
 import { LogViewComponent } from './components/log-view/log-view.component';
+import {SimulationMainComponent} from './components/simlation-main/simulation-main.component';
 import {LogResolver} from "./resolvers/log.resolver";
 import {GuildResolver} from "./resolvers/guild.resolver";
 import {BattleNetService} from "./services/battle-net/battle-net.service";
@@ -41,8 +42,8 @@ const appRoutes: Routes = [
     resolve: {
       data: LogResolver
     }
-  }
-
+  },
+    {path: 'simulation',component: SimulationMainComponent}
 ];
 
 @NgModule({
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     RosterMainComponent,
     RaidLogsMainComponent,
     HomeMainComponent,
-    LogViewComponent
+    LogViewComponent,
+    SimulationMainComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
