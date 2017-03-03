@@ -15,7 +15,7 @@ export class WarcraftLogsService {
   getGuildLogList():Observable<ReportMeta[]> {
 
     let guildName = 'cinder%20and%20ash';
-    let serverName = `malganis`;
+    let serverName = `chogall`;
     let serverRegion = 'us';
     const apiUrl = `https://www.warcraftlogs.com:443/v1/reports/guild/${guildName}/${serverName}/${serverRegion}?api_key=${this.PUBLIC_KEY}`;
 
