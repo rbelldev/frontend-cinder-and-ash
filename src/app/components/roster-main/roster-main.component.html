@@ -2,10 +2,10 @@
 <h2>{{guild.name}} ({{guild.guildMembers.length}})</h2>
 
 <div>
-  <table class="table table-striped table-hover">
+  <table class="table" style="background-color: black">
 
     <thead>
-    <tr>
+    <tr style="color: white">
       <th>Rank</th>
       <th>Name</th>
       <th>Level</th>
@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let guildMember of guild.guildMembers">
+    <tr *ngFor="let guildMember of guild.guildMembers" class="{{guildMember.class}}" [ngStyle]="{'color': guildMember.character.getClassColor()}">
       <td>{{guildMember.guildRank.rankName}}</td>
       <td>{{guildMember.character.name}}</td>
       <td>{{guildMember.character.level}}</td>
