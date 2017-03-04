@@ -1,22 +1,19 @@
-.sidenav-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.navbar-header {
+  float: none;
 }
-
-.sidenav {
-  padding: 20px;
+.navbar-toggle {
+  display: block;
 }
-
-.hand-hover{
-  cursor: pointer;
+.navbar-collapse.collapse {
+  display: none!important;
 }
-
-md-sidenav button {
-  width: 100%;
-  text-align: left;
+.navbar-nav {
+  text-align: right;
+  float: none!important;
 }
-
-md-sidenav md-list-item {
-  width: 100%;
+.navbar-nav>li {
+  float: none;
+}
+.navbar-collapse.collapse.in{
+  display:block !important;
 }
