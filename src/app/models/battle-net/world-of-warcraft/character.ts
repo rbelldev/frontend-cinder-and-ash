@@ -52,6 +52,16 @@ export class Character {
     'Demon Hunter'
   ];
 
+  getInvertedClassColor():string{
+    switch (this.class) {
+      case 'Priest':
+      case 'Rogue' :
+        return 'black';
+      default:
+        return 'white';
+    }
+  }
+
   getClassColor():string{
     switch (this.class) {
       case '':
