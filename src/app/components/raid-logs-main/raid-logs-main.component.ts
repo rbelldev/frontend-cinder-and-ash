@@ -18,9 +18,12 @@ export class RaidLogsMainComponent implements OnInit{
     this.logResults = this.route.snapshot.data['logResults'];
   }
 
-  navigateToLog(id:string){
-    // this.router.navigateByUrl(`/log/${id}`);
-    window.location.href = `https://www.warcraftlogs.com/reports/${id}`
+  navigateToCheckMyWow(id:string){
+    window.open(`http://www.checkmywow.com/reports/${id}`,'_blank')
+  }
+
+  navigateToWarcraftLogs(id:string){
+    window.open(`https://www.warcraftlogs.com/reports/${id}`,'_blank')
   }
 
 }

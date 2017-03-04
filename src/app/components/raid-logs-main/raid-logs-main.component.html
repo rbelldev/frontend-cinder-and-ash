@@ -6,14 +6,16 @@
     <thead>
       <tr>
         <th>Date</th>
-        <th>Description</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let reportMeta of logResults" (click)="navigateToLog(reportMeta.id)">
+      <tr *ngFor="let reportMeta of logResults">
         <td>{{reportMeta.startDate}}</td>
-        <td>{{reportMeta.title}}</td>
+        <td><button class="btn btn-primary" (click)="navigateToWarcraftLogs(reportMeta.id)">Warcraft Logs</button></td>
+        <td><button class="btn btn-info" (click)="navigateToCheckMyWow(reportMeta.id)">Check My WoW</button></td>
       </tr>
     </tbody>
 
