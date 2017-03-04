@@ -1,14 +1,27 @@
 <div id="top">
-  <h2>Welcome to Cinder and Ash</h2>
+  <h1>Welcome to Cinder and Ash</h1>
 
-  <h3>Mythic Nighthold Videos</h3>
+  <h2>Mythic Nighthold Videos</h2>
 
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let video of raidVideos" (click)="navigateToRaidVideo(video.id)">{{video.bossName}}</li>
-  </ul>
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let video of raidVideos" (click)="navigateToRaidVideo(video.id)">
+          {{video.bossName}}
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+
+  </div>
 
   <div id="{{video.id}}" *ngFor="let video of raidVideos">
-    <h2>{{video.bossName}}</h2>
+    <h3>{{video.bossName}}</h3>
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" width="560" height="315" [src]="video.youtubeUrl | safe"
               frameborder="0" allowfullscreen></iframe>
