@@ -1,6 +1,7 @@
 import {Character} from "./character";
 import {GuildRank} from "./guild-rank";
 import {GuildMember} from "./guild-member";
+import {isNullOrUndefined} from "util";
 export class Guild {
 
   constructor(json:JSON){
@@ -21,9 +22,12 @@ export class Guild {
       const character = new Character(member['character']);
       const guildRank = new GuildRank(member['rank']);
 
-      const guildMember = new GuildMember(character, guildRank);
+      if(character.classSpec != null || character.classSpec != undefined) {
 
-      this.guildMembers.push(guildMember)
+        const guildMember = new GuildMember(character, guildRank);
+        this.guildMembers.push(guildMember);
+
+      }
 
     }
 

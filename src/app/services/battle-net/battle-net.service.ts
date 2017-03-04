@@ -20,7 +20,7 @@ export class BattleNetService {
   constructor(private http: Http) {}
 
   getGuildRoster(): Observable<Guild> {
-    const fields: string = 'members';
+    const fields: string = 'members%2C+ranks';
 
     return this.http.get(`${this.baseUrl}/${this.guildEndPoint}/${this.realmName}/${this.guildName}?fields=${fields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`).map(
       response => {
