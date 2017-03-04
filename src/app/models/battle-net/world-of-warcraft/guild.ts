@@ -1,7 +1,10 @@
 import {Character} from "./character";
+import {GuildRank} from "./guild-rank";
+import {GuildMember} from "./guild-member";
 export class Guild {
 
   constructor(json:JSON){
+
     this.name = json['name'];
     this.realm = json['realm'];
     this.battleGroup = json[' battleGroup'];
@@ -12,9 +15,18 @@ export class Guild {
     const membersJson = json['members'];
 
     for (let i = 0; i < membersJson.length; i++){
+
       const member = membersJson[i];
-      this.members.push(new Character(member['character']))
+
+      const character = new Character(member['character']);
+      const guildRank = new GuildRank(member['rank']);
+
+      const guildMember = new GuildMember(character, guildRank);
+
+      this.guildMembers.push(guildMember)
+
     }
+
   }
 
   name:string;
@@ -23,6 +35,6 @@ export class Guild {
   level:number;
   side:number;
   achievementPoints:number;
-  members:Character[] = [];
+  guildMembers:GuildMember[] = [];
 
 }

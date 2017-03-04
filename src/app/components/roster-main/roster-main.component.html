@@ -2,5 +2,5 @@
 <h3>{{guild.name}}</h3>
 
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let member of guild.members">{{member.name}} {{member.level}} {{member.class}}</li>
+  <li class="list-group-item" *ngFor="let guildMember of guild.guildMembers">{{guildMember.guildRank.rankName}} {{guildMember.character.name}} {{guildMember.character.level}} {{guildMember.character.class}}</li>
 </ul>
