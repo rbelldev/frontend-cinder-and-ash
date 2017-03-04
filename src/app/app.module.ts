@@ -18,6 +18,7 @@ import {SimulationMainComponent} from './components/simlation-main/simulation-ma
 import {LogResolver} from "./resolvers/log.resolver";
 import {GuildResolver} from "./resolvers/guild.resolver";
 import {BattleNetService} from "./services/battle-net/battle-net.service";
+import {SafePipe} from "./pipes/safe-pipe";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
     RaidLogsMainComponent,
     HomeMainComponent,
     LogViewComponent,
-    SimulationMainComponent
+    SimulationMainComponent,
+    SafePipe
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
