@@ -52,21 +52,6 @@ export class Character {
     'Demon Hunter'
   ];
 
-  getClassIcon():string {
-    const simpleClassName = this.class.replace(" ", "").toLowerCase();
-    let iconPath: string = `/assets/battle-net/class/${simpleClassName}.png`;
-
-    return iconPath;
-  }
-
-  getClassSpecIcon():string {
-    const simpleClassName = this.class.replace(" ", "").toLowerCase();
-    const simpleClassSpec = this.classSpec.name.toLowerCase();
-
-    let iconPath: string = `/assets/battle-net/spec/${simpleClassName}/${simpleClassSpec}.png`;
-
-    return iconPath;
-  }
 
   getClassColor():string{
     switch (this.class) {
@@ -99,3 +84,18 @@ export class Character {
     }
   }
 }
+  // getClassIcon():string {
+  //   const simpleClassName = this.class.replace(" ", "").toLowerCase();
+  //   let iconPath: string = `/assets/battle-net/class/${simpleClassName}.png`;
+  //
+  //   return iconPath;
+  // }
+  //
+  // getClassSpecIcon():string {
+  //   const simpleClassName = this.class.replace(" ", "").toLowerCase();
+  //   const simpleClassSpec = this.classSpec.name.toLowerCase();
+  //
+  //   let iconPath: string = `/assets/battle-net/spec/${simpleClassName}/${simpleClassSpec}.png`;
+  //
+  //   return iconPath;
+  // }

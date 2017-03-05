@@ -12,7 +12,7 @@ export class RaidLogsMainComponent implements OnInit{
 
   logResults: ReportMeta[];
 
-  constructor(private route: ActivatedRoute, private router:Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.logResults = this.route.snapshot.data['logResults'];

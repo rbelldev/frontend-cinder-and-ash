@@ -19,6 +19,8 @@ import {LogResolver} from "./resolvers/log.resolver";
 import {GuildResolver} from "./resolvers/guild.resolver";
 import {BattleNetService} from "./services/battle-net/battle-net.service";
 import {SafePipe} from "./pipes/safe-pipe";
+import { CharacterDetailsComponent } from './components/roster-main/character-details/character-details.component';
+import {CharacterResolver} from "./resolvers/characte.resolver";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -32,16 +34,16 @@ const appRoutes: Routes = [
   },
   {
     path: 'raid-logs',
-    component: RaidLogsMainComponent,
+    component: CharacterDetailsComponent,
     resolve: {
       logResults: GuildLogListResolver
     }
   },
   {
-    path: 'log/:id',
-    component: LogViewComponent,
+    path: 'character/:name',
+    component: CharacterDetailsComponent,
     resolve: {
-      data: LogResolver
+      character: CharacterResolver
     }
   },
     {path: 'simulation',component: SimulationMainComponent}
@@ -56,7 +58,8 @@ const appRoutes: Routes = [
     HomeMainComponent,
     LogViewComponent,
     SimulationMainComponent,
-    SafePipe
+    SafePipe,
+    CharacterDetailsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -69,7 +72,8 @@ const appRoutes: Routes = [
     BattleNetService,
     GuildLogListResolver,
     GuildResolver,
-    LogResolver
+    LogResolver,
+    CharacterResolver
   ],
   bootstrap: [AppComponent]
 })
