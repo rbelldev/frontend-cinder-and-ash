@@ -13,24 +13,25 @@ export class Guild {
     this.side = json['side'];
     this.achievementPoints = json['achievementPoints'];
 
-    const membersJson = json['members'];
+    if(json['members']) {
+      const membersJson = json['members'];
 
-    for (let i = 0; i < membersJson.length; i++){
+      for (let i = 0; i < membersJson.length; i++) {
 
-      const member = membersJson[i];
+        const member = membersJson[i];
 
-      const character = new Character(member['character']);
-      const guildRank = new GuildRank(member['rank']);
+        const character = new Character(member['character']);
+        const guildRank = new GuildRank(member['rank']);
 
-      if(character.classSpec != null || character.classSpec != undefined) {
+        if (character.classSpec != null || character.classSpec != undefined) {
 
-        const guildMember = new GuildMember(character, guildRank);
-        this.guildMembers.push(guildMember);
+          const guildMember = new GuildMember(character, guildRank);
+          this.guildMembers.push(guildMember);
+
+        }
 
       }
-
     }
-
   }
 
   name:string;

@@ -1,3 +1,34 @@
-<p>
-  {{character.name}}
-</p>
+<h2>Character Details</h2>
+<h3>{{character.name}}</h3>
+<h4>{{character.level}} {{character.class}}</h4>
+
+<div>
+  <table class="table table-responsive" style="background-color: black">
+
+    <thead>
+      <tr style="color: white">
+        <th>Slot</th>
+        <th>Item Level</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+
+
+    <tbody>
+      <tr *ngFor="let itemSlot of character.equippedItems.itemSlots">
+        <td style="color: white">{{character.equippedItems.itemSlotDisplayStrings[itemSlot]}}</td>
+        <td style="color: white" *ngIf="character.equippedItems[itemSlot]">
+          {{character.equippedItems[itemSlot].itemLevel}}
+        </td>
+        <td *ngIf="character.equippedItems[itemSlot]">
+          <a href="http://www.wowhead.com/item={{character.equippedItems[itemSlot].id}}" class="q{{character.equippedItems[itemSlot].quality}}">
+            {{character.equippedItems[itemSlot].name}}
+          </a>
+        </td>
+        <td *ngIf="!character.equippedItems[itemSlot]"></td>
+        <td *ngIf="!character.equippedItems[itemSlot]"></td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

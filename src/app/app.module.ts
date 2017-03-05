@@ -21,6 +21,7 @@ import {BattleNetService} from "./services/battle-net/battle-net.service";
 import {SafePipe} from "./pipes/safe-pipe";
 import { CharacterDetailsComponent } from './components/roster-main/character-details/character-details.component';
 import {CharacterResolver} from "./resolvers/characte.resolver";
+import { ItemRowComponent } from './components/roster-main/character-details/item-row/item-row.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -59,7 +60,8 @@ const appRoutes: Routes = [
     LogViewComponent,
     SimulationMainComponent,
     SafePipe,
-    CharacterDetailsComponent
+    CharacterDetailsComponent,
+    ItemRowComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

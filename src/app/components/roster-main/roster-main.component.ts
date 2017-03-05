@@ -22,7 +22,7 @@ export class RosterMainComponent {
   }
 
   navigateToCharacterDetails(name:string){
-    // this.router.navigateByUrl(`/character/${name}`);
+    this.router.navigateByUrl(`/character/${name}`);
   }
 
 }

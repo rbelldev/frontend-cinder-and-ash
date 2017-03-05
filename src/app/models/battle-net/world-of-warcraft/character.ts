@@ -1,4 +1,5 @@
 import {ClassSpec} from "./class-spec";
+import {EquippedItems} from "./equipped-items";
 
 export class Character {
 
@@ -14,6 +15,7 @@ export class Character {
   achievementPoints: number;
   guild: string;
   guildRealm: string;
+  equippedItems:EquippedItems;
 
   constructor(json: JSON) {
 
@@ -23,16 +25,20 @@ export class Character {
     this.class = this.classes[json['class']];
     this.classId = this.classes[json['class']];
 
-    if (json['spec']) {
-      this.classSpec = new ClassSpec(json['spec']);
-    }
-
     this.race = json['race'];
     this.gender = json['gender'];
     this.level = json['level'];
     this.achievementPoints = json['achievementPoints'];
     this.guild = json['guild'];
     this.guildRealm = json['guildRealm'];
+
+    if (json['spec']) {
+      this.classSpec = new ClassSpec(json['spec']);
+    }
+
+    if(json['items']){
+      this.equippedItems = new EquippedItems(json['items']);
+    }
 
   }
 
