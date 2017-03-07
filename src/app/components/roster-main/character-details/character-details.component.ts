@@ -53,4 +53,23 @@ export class CharacterDetailsComponent implements OnInit{
     return params;
   }
 
+  generateRelBonusForWowhead(item:Item):string{
+
+    const rawBonus = item.bonusLists;
+    let relString = "";
+
+    if(rawBonus) {
+
+      for (let i = 0; i < rawBonus.length; i++) {
+        relString += rawBonus[i];
+        if (i != (rawBonus.length - 1)) {
+          relString += ':'
+        }
+      }
+
+    }
+
+    return relString;
+  }
+
 }

@@ -13,6 +13,7 @@ export class Item {
   context:string;
   displayInfoId:string;
   tooltipParams:TooltipParams;
+  bonusLists:number[];
 
   constructor(json:JSON){
 
@@ -26,6 +27,7 @@ export class Item {
     this.context = json['context'];
     this.displayInfoId = json['displayInfoId'];
     this.tooltipParams = json['tooltipParams'];
+    this.bonusLists = json['bonusLists'];
 
   }
 
