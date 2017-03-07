@@ -1,4 +1,5 @@
 import {ItemStat} from "./item-stat";
+import {TooltipParams} from "./tooltip-params";
 
 export class Item {
 
@@ -11,6 +12,7 @@ export class Item {
   armor:number;
   context:string;
   displayInfoId:string;
+  tooltipParams:TooltipParams;
 
   constructor(json:JSON){
 
@@ -23,6 +25,7 @@ export class Item {
     this.armor = json['armor'];
     this.context = json['context'];
     this.displayInfoId = json['displayInfoId'];
+    this.tooltipParams = json['tooltipParams'];
 
   }
 
