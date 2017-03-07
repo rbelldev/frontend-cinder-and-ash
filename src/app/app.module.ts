@@ -24,8 +24,15 @@ import {CharacterResolver} from "./resolvers/characte.resolver";
 import { ItemRowComponent } from './components/roster-main/character-details/item-row/item-row.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', component: HomeMainComponent },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeMainComponent
+  },
   {
     path: 'roster',
     component: RosterMainComponent,
@@ -47,7 +54,10 @@ const appRoutes: Routes = [
       character: CharacterResolver
     }
   },
-    {path: 'simulation',component: SimulationMainComponent}
+    {
+      path: 'simulation',
+      component: SimulationMainComponent
+    }
 ];
 
 @NgModule({
