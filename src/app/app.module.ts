@@ -35,7 +35,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'raid-logs',
-    component: CharacterDetailsComponent,
+    component: RaidLogsMainComponent,
     resolve: {
       logResults: GuildLogListResolver
     }
