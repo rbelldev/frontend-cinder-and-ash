@@ -55,10 +55,20 @@ export class CharacterDetailsComponent implements OnInit{
 
   generateRelBonusForWowhead(item:Item):string{
 
-    const rawBonus = item.bonusLists;
     let relString = "";
 
+    let enchant = item.tooltipParams.enchant;
+
+    if(enchant){
+      relString += "ench=" + enchant
+    }
+
+    const rawBonus = item.bonusLists;
+
     if(rawBonus) {
+
+      if (enchant){ relString += "&" }
+      relString += "bonus=";
 
       for (let i = 0; i < rawBonus.length; i++) {
         relString += rawBonus[i];

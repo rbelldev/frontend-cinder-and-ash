@@ -22,7 +22,7 @@
         </td>
         <td *ngIf="character.equippedItems[itemSlot]">
           <a href="http://www.wowhead.com/item={{character.equippedItems[itemSlot].id}}"
-             rel='bonus={{generateRelBonusForWowhead(character.equippedItems[itemSlot])}}'
+             rel='{{generateRelBonusForWowhead(character.equippedItems[itemSlot])}}'
              class="q{{character.equippedItems[itemSlot].quality}}">
             {{character.equippedItems[itemSlot].name}}
           </a>
