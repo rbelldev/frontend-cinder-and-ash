@@ -18,11 +18,10 @@ export class RosterMainComponent {
   constructor(private route: ActivatedRoute, private router: Router ,private guildMemberSorter: GuildMemberSorter) {}
 
   ngOnInit() {
-    this.guild = this.guildMemberSorter.sortByRankDescending(this.route.snapshot.data['guild']);
-  }
-
-  navigateToCharacterDetails(name:string){
-    this.router.navigateByUrl(`/character/${name}`);
+    // window['guild'] = this.route.snapshot.data['guild'];
+    const datum = this.route.snapshot.data['guild'];
+    window['guild'] = datum;
+    this.guild = this.guildMemberSorter.sortByRankDescending(datum);
   }
 
 }

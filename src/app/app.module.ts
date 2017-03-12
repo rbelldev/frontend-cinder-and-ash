@@ -22,6 +22,8 @@ import {SafePipe} from "./pipes/safe-pipe";
 import { CharacterDetailsComponent } from './components/roster-main/character-details/character-details.component';
 import {CharacterResolver} from "./resolvers/characte.resolver";
 import { ItemRowComponent } from './components/roster-main/character-details/item-row/item-row.component';
+import { RosterTableComponent } from './components/roster-main/roster-table/roster-table.component';
+import {MythicRosterTableComponent} from "./components/roster-main/mythic-roster-table/mythic-roster-table.component";
 
 const appRoutes: Routes = [
   {
@@ -71,7 +73,9 @@ const appRoutes: Routes = [
     SimulationMainComponent,
     SafePipe,
     CharacterDetailsComponent,
-    ItemRowComponent
+    ItemRowComponent,
+    RosterTableComponent,
+    MythicRosterTableComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

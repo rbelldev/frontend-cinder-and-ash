@@ -29,9 +29,28 @@ export class Guild {
           this.guildMembers.push(guildMember);
 
         }
-
       }
     }
+  }
+
+  getMythicTanks():GuildMember[]{
+    return this.findMembers(this.mythicTanks)
+  }
+
+  getMythicHeals():GuildMember[]{
+    return this.findMembers(this.mythicHeals)
+  }
+
+  getMythicRanged():GuildMember[]{
+    return this.findMembers(this.mythicRanged)
+  }
+
+  getMythicMelee():GuildMember[]{
+    return this.findMembers(this.mythicMelee)
+  }
+
+  findMembers(membersToFind:string[]):GuildMember[]{
+    return this.guildMembers.filter( guildMember => membersToFind.indexOf(guildMember.character.name) > -1)
   }
 
   name:string;
@@ -41,5 +60,12 @@ export class Guild {
   side:number;
   achievementPoints:number;
   guildMembers:GuildMember[] = [];
+
+  mythicTanks:string[] = ['Embersong', 'Japostrophe'];
+  mythicHeals:string[] = ['Cattìbrie', 'Kÿra', 'Elderwulf', 'Kenlòre'];
+  mythicRanged:string[] = ['Twinslayerzz', 'Synthoras', 'Hezbolah', 'Gingerbrows', 'Revërie', 'Calissta', 'Doused'];
+  mythicMelee:string[] = ['Dasan', 'Knutè', 'Kirelion', 'Sçythér', 'Supbae', 'Djeckt', 'Healtough'];
+
+  // Trialing: doss and chand, meepo?
 
 }
