@@ -7,12 +7,16 @@ export class TierAssessment {
   constructor(private character:Character){}
 
   hasPiece(slotName:string):boolean{
-    const tierName = this.tierNameToClassMap[this.character.class];
+    const tierName = this.classToTierNameMap[this.character.class];
     const equippedItemInSlot = this.character.equippedItems[slotName];
     return equippedItemInSlot.name.indexOf(tierName) >= 0 || equippedItemInSlot.itemLevel == 940;
   }
 
-  tierNameToClassMap = {
+  getTierGroup():string{
+    return this.classToTierGroupMap[this.character.class];
+  }
+
+  classToTierNameMap = {
     'Warrior':'Obsidian Aspect',
     'Paladin':'Highlord',
     'Hunter':'Eagletalon',
@@ -26,5 +30,22 @@ export class TierAssessment {
     'Druid':'Astral Warden',
     'Demon Hunter':'Second Sight'
   }
+
+  classToTierGroupMap = {
+    'Warrior':'Protector',
+    'Paladin':'Conqueror',
+    'Hunter':'Protector',
+    'Rogue':'Vanquisher',
+    'Priest':'Conqueror',
+    'Death Knight':'Vanquisher',
+    'Shaman':'Protector',
+    'Mage':'Vanquisher',
+    'Warlock':'Conqueror',
+    'Monk':'Protector',
+    'Druid':'Vanquisher',
+    'Demon Hunter':'Conqueror'
+  }
+
+
 
 }
