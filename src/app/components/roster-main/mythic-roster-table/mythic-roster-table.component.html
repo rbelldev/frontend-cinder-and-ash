@@ -5,18 +5,22 @@
   <table class="table table-responsive" style="background-color: black">
 
     <thead>
+
       <tr style="color: white">
         <th class="col-md-1">iLvl</th>
         <th class="col-md-2">Name</th>
         <th class="col-md-2">Class</th>
         <th class="col-md-1" *ngFor="let tierSlot of tierSlots">{{tierSlot}}</th>
       </tr>
+
     </thead>
 
     <tbody>
+
       <tr *ngFor="let guildMember of memberList" style="cursor: hand"
           class="{{guildMember.class}}"
           [ngStyle]="{'color': guildMember.character.getClassColor()}">
+
         <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.equippedItems.averageItemLevelEquipped}}</td>
         <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.name}}</td>
         <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.classSpec.name}} {{guildMember.character.class}}</td>
@@ -28,6 +32,7 @@
         </td>
 
       </tr>
+
     </tbody>
 
   </table>

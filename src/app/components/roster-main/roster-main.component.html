@@ -1,9 +1,16 @@
 <h1>Roster</h1>
 
-<div class="alert alert-success">
-  <h4>Update!</h4>
-  <p>Click on any row in the roster list to view details for that character. Enchants are showing now!</p>
-  <p>Note: Gems are not showing yet, but I'm working on getting those to display along with item set count.</p>
+<div class="alert alert-warning">
+
+  <h4>Mythic Roster</h4>
+
+  <p><strong>If you are on this list, you are expected to attend Raid Nights Thursday and Friday @ 7pm Server.</strong></p>
+  <br/>
+  <p>We all have lives, if you can't make a Raid Night please just let an officer know through one of our various mediums (Facebook, in-game mail/chat, Discord, etc.).
+    <strong>If you are not on this list, you should still show up for Raid Nights.</strong> The schedule can change at any point, we could be doing Heroic or need subs for missing people.</p>
+  <br/>
+  <p><i>This list is subject to change at any time, please do not be discouraged if your name is not here.</i></p>
+
 </div>
 
 <ul class="nav nav-tabs">
@@ -14,38 +21,54 @@
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active in" id="mythic">
 
-    <div class="btn-group" style="padding-top: 1.25em">
+    <div class="btn-group">
 
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       Tier Group: {{currentTierGroupFilter}} <span class="caret"></span>
-      </button>
+      <div class="btn-group" style="padding-top: 1.25em">
 
-      <ul class="dropdown-menu">
-        <li (click)="filterTierGroup('All')"><a>All</a></li>
-        <li role="separator" class="divider"></li>
-        <li *ngFor="let tierGroup of tierGroups" (click)="filterTierGroup(tierGroup)"><a>{{tierGroup}}</a></li>
-      </ul>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+          Tier Group: {{currentTierGroupFilter}} <span class="caret"></span>
+        </button>
 
+        <ul class="dropdown-menu">
+          <li (click)="filterTierGroup('All')"><a>All</a></li>
+          <li role="separator" class="divider"></li>
+          <li *ngFor="let tierGroup of tierGroups" (click)="filterTierGroup(tierGroup)"><a>{{tierGroup}}</a></li>
+        </ul>
+
+      </div>
+
+      <div class="btn-group" style="padding-top: 1.25em">
+
+        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+          Item Slot: {{currentSlotFilter}} <span class="caret"></span>
+        </button>
+
+        <ul class="dropdown-menu">
+          <li (click)="filterTierSlot('All')"><a>All</a></li>
+          <li role="separator" class="divider"></li>
+          <li *ngFor="let tierSlot of tierSlots" (click)="filterTierSlot(tierSlot)"><a>{{tierSlot}}</a></li>
+        </ul>
+
+      </div>
     </div>
 
-    <div class="btn-group" style="padding-top: 1.25em">
+    <mythic-roster-table [memberList]="mythicTanks"
+                         [label]="'Tanks'"
+                         [tierSlots]="activeTierSlots"></mythic-roster-table>
 
-      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Item Slot: {{currentSlotFilter}} <span class="caret"></span>
-      </button>
+    <mythic-roster-table [memberList]="mythicHeals"
+                         [label]="'Heals'"
+                         [tierSlots]="activeTierSlots"></mythic-roster-table>
 
-      <ul class="dropdown-menu">
-        <li (click)="filterTierSlot('All')"><a>All</a></li>
-        <li role="separator" class="divider"></li>
-        <li *ngFor="let tierSlot of tierSlots" (click)="filterTierSlot(tierSlot)"><a>{{tierSlot}}</a></li>
-      </ul>
+    <mythic-roster-table [memberList]="mythicRanged"
+                         [label]="'Ranged'"
+                         [tierSlots]="activeTierSlots"></mythic-roster-table>
 
-    </div>
-
-    <mythic-roster-table [memberList]="mythicTanks" [label]="'Tanks'" [tierSlots]="activeTierSlots"></mythic-roster-table >
-    <mythic-roster-table [memberList]="mythicHeals" [label]="'Heals'" [tierSlots]="activeTierSlots"></mythic-roster-table>
-    <mythic-roster-table [memberList]="mythicRanged" [label]="'Ranged'" [tierSlots]="activeTierSlots"></mythic-roster-table>
-    <mythic-roster-table [memberList]="mythicMelee" [label]="'Melee'" [tierSlots]="activeTierSlots"></mythic-roster-table>
+    <mythic-roster-table [memberList]="mythicMelee"
+                         [label]="'Melee'"
+                         [tierSlots]="activeTierSlots"></mythic-roster-table>
 
   </div>
 
