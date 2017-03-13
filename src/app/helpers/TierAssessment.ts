@@ -8,7 +8,8 @@ export class TierAssessment {
 
   hasPiece(slotName:string):boolean{
     const tierName = this.tierNameToClassMap[this.character.class];
-    return this.character.equippedItems[slotName].name.indexOf(tierName) >= 0;
+    const equippedItemInSlot = this.character.equippedItems[slotName];
+    return equippedItemInSlot.name.indexOf(tierName) >= 0 || equippedItemInSlot.itemLevel == 940;
   }
 
   tierNameToClassMap = {
