@@ -20,7 +20,7 @@ export class TierAssessment {
     'Death Knight':'Dreadwyrm',
     'Shaman':'Shackled Elements',
     'Mage':'Everburning Knowledge',
-    'Warlock':'Azj\'Aquir',
+    'Warlock':'Azj\'Aqir',
     'Monk':'Enveloped Dissonance',
     'Druid':'Astral Warden',
     'Demon Hunter':'Second Sight'

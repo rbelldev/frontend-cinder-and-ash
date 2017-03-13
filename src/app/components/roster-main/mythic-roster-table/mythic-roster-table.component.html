@@ -20,13 +20,17 @@
     <tbody>
       <tr *ngFor="let guildMember of memberList" style="cursor: hand"
           class="{{guildMember.class}}"
-          [ngStyle]="{'color': guildMember.character.getClassColor()}" (click)="navigateToCharacterDetails(guildMember.character.name)">
+          [ngStyle]="{'color': guildMember.character.getClassColor()}">
         <td>{{guildMember.character.equippedItems.averageItemLevelEquipped}}</td>
         <td>{{guildMember.character.name}}</td>
         <td>{{guildMember.character.classSpec.name}} {{guildMember.character.class}}</td>
+
         <td *ngFor="let tierSlot of tierSlots">
-          <span *ngIf="guildMember.character.tierAssessment.hasPiece(tierSlot)">{{guildMember.character.equippedItems[tierSlot].itemLevel}}</span>
+          <a *ngIf="guildMember.character.tierAssessment.hasPiece(tierSlot)" href="http://www.wowhead.com/item={{guildMember.character.equippedItems[tierSlot].id}}"
+             rel='{{generateRelBonusForWowhead(guildMember.character.equippedItems[tierSlot])}}'
+             class="q{{guildMember.character.equippedItems[tierSlot].quality}}">{{guildMember.character.equippedItems[tierSlot].itemLevel}}</a>
         </td>
+
       </tr>
     </tbody>
 
