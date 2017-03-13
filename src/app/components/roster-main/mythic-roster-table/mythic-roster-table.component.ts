@@ -18,4 +18,7 @@ export class MythicRosterTableComponent {
     this.router.navigateByUrl(`/character/${name}`);
   }
 
+  tierSlots:string[] = ['head', 'shoulder', 'chest', 'back',
+                        'hands', 'legs']
+
 }

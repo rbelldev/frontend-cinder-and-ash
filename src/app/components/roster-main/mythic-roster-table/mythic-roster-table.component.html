@@ -10,10 +10,10 @@
         <th class="col-md-2">Class</th>
         <th class="col-md-1">Head</th>
         <th class="col-md-1">Shoulders</th>
+        <th class="col-md-1">Chest</th>
         <th class="col-md-1">Back</th>
         <th class="col-md-1">Hands</th>
         <th class="col-md-1">Legs</th>
-        <th class="col-md-1">Feet</th>
       </tr>
     </thead>
 
@@ -24,12 +24,9 @@
         <td>{{guildMember.character.equippedItems.averageItemLevelEquipped}}</td>
         <td>{{guildMember.character.name}}</td>
         <td>{{guildMember.character.classSpec.name}} {{guildMember.character.class}}</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td *ngFor="let tierSlot of tierSlots">
+          <span *ngIf="guildMember.character.tierAssessment.hasPiece(tierSlot)">{{guildMember.character.equippedItems[tierSlot].itemLevel}}</span>
+        </td>
       </tr>
     </tbody>
 

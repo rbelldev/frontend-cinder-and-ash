@@ -1,5 +1,6 @@
 import {ClassSpec} from "./class-spec";
 import {EquippedItems} from "./equipped-items";
+import {TierAssessment} from "../../../helpers/TierAssessment";
 
 export class Character {
 
@@ -16,6 +17,7 @@ export class Character {
   guild: string;
   guildRealm: string;
   equippedItems:EquippedItems;
+  tierAssessment:TierAssessment;
 
   constructor(json: JSON) {
 
@@ -40,6 +42,7 @@ export class Character {
       this.equippedItems = new EquippedItems(json['items']);
     }
 
+    this.tierAssessment = new TierAssessment(this);
   }
 
   classes: string[] = [
