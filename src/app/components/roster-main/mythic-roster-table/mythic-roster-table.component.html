@@ -1,6 +1,7 @@
 <h2>{{label}} ({{memberList.length}})</h2>
 
 <div>
+
   <table class="table table-responsive" style="background-color: black">
 
     <thead>
@@ -21,9 +22,9 @@
       <tr *ngFor="let guildMember of memberList" style="cursor: hand"
           class="{{guildMember.class}}"
           [ngStyle]="{'color': guildMember.character.getClassColor()}">
-        <td>{{guildMember.character.equippedItems.averageItemLevelEquipped}}</td>
-        <td>{{guildMember.character.name}}</td>
-        <td>{{guildMember.character.classSpec.name}} {{guildMember.character.class}}</td>
+        <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.equippedItems.averageItemLevelEquipped}}</td>
+        <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.name}}</td>
+        <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.classSpec.name}} {{guildMember.character.class}}</td>
 
         <td *ngFor="let tierSlot of tierSlots">
           <a *ngIf="guildMember.character.tierAssessment.hasPiece(tierSlot)" href="http://www.wowhead.com/item={{guildMember.character.equippedItems[tierSlot].id}}"
