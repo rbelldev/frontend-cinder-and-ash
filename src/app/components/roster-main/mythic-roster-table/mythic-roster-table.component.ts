@@ -12,6 +12,7 @@ export class MythicRosterTableComponent {
 
   @Input() memberList: GuildMember[];
   @Input() label: string;
+  @Input() tierSlots:string[];
 
   constructor(private router:Router){}
 
@@ -19,8 +20,7 @@ export class MythicRosterTableComponent {
     this.router.navigateByUrl(`/character/${name}`);
   }
 
-  tierSlots:string[] = ['head', 'shoulder', 'chest', 'back',
-                        'hands', 'legs']
+
 
   generateRelBonusForWowhead(item:Item):string{
 

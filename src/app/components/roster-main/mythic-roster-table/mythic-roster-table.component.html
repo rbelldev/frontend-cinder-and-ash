@@ -9,12 +9,7 @@
         <th class="col-md-1">iLvl</th>
         <th class="col-md-2">Name</th>
         <th class="col-md-2">Class</th>
-        <th class="col-md-1">Head</th>
-        <th class="col-md-1">Shoulders</th>
-        <th class="col-md-1">Chest</th>
-        <th class="col-md-1">Back</th>
-        <th class="col-md-1">Hands</th>
-        <th class="col-md-1">Legs</th>
+        <th class="col-md-1" *ngFor="let tierSlot of tierSlots">{{tierSlot}}</th>
       </tr>
     </thead>
 
@@ -27,9 +22,9 @@
         <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.classSpec.name}} {{guildMember.character.class}}</td>
 
         <td *ngFor="let tierSlot of tierSlots">
-          <a *ngIf="guildMember.character.tierAssessment.hasPiece(tierSlot)" href="http://www.wowhead.com/item={{guildMember.character.equippedItems[tierSlot].id}}"
-             rel='{{generateRelBonusForWowhead(guildMember.character.equippedItems[tierSlot])}}'
-             class="q{{guildMember.character.equippedItems[tierSlot].quality}}">{{guildMember.character.equippedItems[tierSlot].itemLevel}}</a>
+          <a *ngIf="guildMember.character.tierAssessment.hasPiece(tierSlot.toLowerCase())" href="http://www.wowhead.com/item={{guildMember.character.equippedItems[tierSlot.toLowerCase()].id}}"
+             rel='{{generateRelBonusForWowhead(guildMember.character.equippedItems[tierSlot.toLowerCase()])}}'
+             class="q{{guildMember.character.equippedItems[tierSlot.toLowerCase()].quality}}">{{guildMember.character.equippedItems[tierSlot.toLowerCase()].itemLevel}}</a>
         </td>
 
       </tr>

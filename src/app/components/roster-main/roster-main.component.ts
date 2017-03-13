@@ -15,36 +15,57 @@ import {GuildMember} from "../../models/battle-net/world-of-warcraft/guild-membe
 export class RosterMainComponent {
 
   guild: Guild;
+
   mythicTanks:GuildMember[];
   mythicHeals:GuildMember[];
   mythicRanged:GuildMember[];
   mythicMelee:GuildMember[];
-  currentFilter: string = 'All';
+
+  currentTierGroupFilter: string = 'All';
+  currentSlotFilter: string = 'All';
+
   tierGroups:string[] = ['Conqueror', 'Protector', 'Vanquisher'];
+  tierSlots:string[] = ['Head', 'Shoulder', 'Chest', 'Back', 'Hands', 'Legs'];
+  activeTierSlots:string[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router ,private guildMemberSorter: GuildMemberSorter) {}
 
   ngOnInit() {
     this.guild = this.guildMemberSorter.sortByRankDescending(this.route.snapshot.data['guild']);
-    this.filter(this.currentFilter);
+    this.filterTierGroup(this.currentTierGroupFilter);
+    this.filterTierSlot(this.currentSlotFilter)
   }
 
-  filter(tierGroup:string){
+  filterTierGroup(tierGroup:string){
 
-    this.currentFilter = tierGroup;
+    this.currentTierGroupFilter = tierGroup;
 
     if(tierGroup.toLowerCase() == 'all') {
+
       this.mythicTanks = this.guild.getMythicTanks();
       this.mythicHeals = this.guild.getMythicHeals();
       this.mythicRanged = this.guild.getMythicRanged();
       this.mythicMelee = this.guild.getMythicMelee();
+
     } else {
+
       this.mythicTanks = this.guild.getMythicTanks().filter( guildMember => guildMember.character.tierAssessment.getTierGroup() == tierGroup);
       this.mythicHeals = this.guild.getMythicHeals().filter( guildMember => guildMember.character.tierAssessment.getTierGroup() == tierGroup);
       this.mythicRanged = this.guild.getMythicRanged().filter( guildMember => guildMember.character.tierAssessment.getTierGroup() == tierGroup);
       this.mythicMelee = this.guild.getMythicMelee().filter( guildMember => guildMember.character.tierAssessment.getTierGroup() == tierGroup);
+
     }
 
+  }
+
+  filterTierSlot(tierSlot:string){
+    this.currentSlotFilter = tierSlot;
+
+    if(tierSlot.toLowerCase() == 'all'){
+      this.activeTierSlots = this.tierSlots;
+    } else {
+      this.activeTierSlots = [tierSlot];
+    }
   }
 
 }

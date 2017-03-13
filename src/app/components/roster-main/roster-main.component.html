@@ -17,21 +17,35 @@
     <div class="btn-group" style="padding-top: 1.25em">
 
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{currentFilter}} <span class="caret"></span>
+       Tier Group: {{currentTierGroupFilter}} <span class="caret"></span>
       </button>
 
       <ul class="dropdown-menu">
-        <li (click)="filter('All')"><a>All</a></li>
+        <li (click)="filterTierGroup('All')"><a>All</a></li>
         <li role="separator" class="divider"></li>
-        <li *ngFor="let tierGroup of tierGroups" (click)="filter(tierGroup)"><a>{{tierGroup}}</a></li>
+        <li *ngFor="let tierGroup of tierGroups" (click)="filterTierGroup(tierGroup)"><a>{{tierGroup}}</a></li>
       </ul>
 
     </div>
 
-    <mythic-roster-table [memberList]="mythicTanks" [label]="'Tanks'"></mythic-roster-table >
-    <mythic-roster-table [memberList]="mythicHeals" [label]="'Heals'"></mythic-roster-table>
-    <mythic-roster-table [memberList]="mythicRanged" [label]="'Ranged'"></mythic-roster-table>
-    <mythic-roster-table [memberList]="mythicMelee" [label]="'Melee'"></mythic-roster-table>
+    <div class="btn-group" style="padding-top: 1.25em">
+
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Item Slot: {{currentSlotFilter}} <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu">
+        <li (click)="filterTierSlot('All')"><a>All</a></li>
+        <li role="separator" class="divider"></li>
+        <li *ngFor="let tierSlot of tierSlots" (click)="filterTierSlot(tierSlot)"><a>{{tierSlot}}</a></li>
+      </ul>
+
+    </div>
+
+    <mythic-roster-table [memberList]="mythicTanks" [label]="'Tanks'" [tierSlots]="activeTierSlots"></mythic-roster-table >
+    <mythic-roster-table [memberList]="mythicHeals" [label]="'Heals'" [tierSlots]="activeTierSlots"></mythic-roster-table>
+    <mythic-roster-table [memberList]="mythicRanged" [label]="'Ranged'" [tierSlots]="activeTierSlots"></mythic-roster-table>
+    <mythic-roster-table [memberList]="mythicMelee" [label]="'Melee'" [tierSlots]="activeTierSlots"></mythic-roster-table>
 
   </div>
 
