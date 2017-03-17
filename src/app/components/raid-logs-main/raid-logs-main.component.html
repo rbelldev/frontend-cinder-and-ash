@@ -13,7 +13,7 @@
 
     <tbody>
       <tr *ngFor="let reportMeta of logResults">
-        <td>{{reportMeta.startDate}}</td>
+        <td>{{reportMeta.startDate | date:'fullDate'}}</td>
         <td><button class="btn btn-primary" (click)="navigateToWarcraftLogs(reportMeta.id)">Warcraft Logs</button></td>
         <td><button class="btn btn-info" (click)="navigateToCheckMyWow(reportMeta.id)">Check My WoW</button></td>
       </tr>
