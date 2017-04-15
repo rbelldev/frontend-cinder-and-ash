@@ -15,6 +15,8 @@
 
   <div class="row">
 
+    <!--#region Server  -->
+
     <div class="form-group col-md-6"
          [ngClass]="{'has-error':!complexForm.controls['server'].valid && complexForm.controls['server'].touched}">
 
@@ -28,6 +30,10 @@
       </div>
     </div>
 
+    <!--#endregion -->
+
+    <!--#region Character Name  -->
+
     <div class="form-group col-md-6"
          [ngClass]="{'has-error':!complexForm.controls['characterName'].valid && complexForm.controls['characterName'].touched}">
 
@@ -40,6 +46,8 @@
         class="alert alert-danger">You must include your character name.
       </div>
     </div>
+
+    <!--#endregion -->
 
   </div>
 
