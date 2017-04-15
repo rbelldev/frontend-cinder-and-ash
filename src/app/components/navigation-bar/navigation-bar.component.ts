@@ -11,7 +11,8 @@ export class NavigationBarComponent {
     {displayText: 'Home', routerLink: '/home', icon: 'home'},
     {displayText: 'Roster', routerLink: '/roster', icon: 'assignment'},
     {displayText: 'Raid Logs', routerLink: '/raid-logs', icon: 'assessment'},
-    {displayText: 'Simulation Craft', routerLink: '/simulation', icon: 'assessment'}
+    {displayText: 'Simulation Craft', routerLink: '/simulation', icon: 'assessment'},
+    {displayText: 'Apply', routerLink: '/apply', icon: 'assessment'}
   ];
 
 }

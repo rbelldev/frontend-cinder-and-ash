@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -24,6 +24,7 @@ import {CharacterResolver} from "./resolvers/characte.resolver";
 import { ItemRowComponent } from './components/roster-main/character-details/item-row/item-row.component';
 import { RosterTableComponent } from './components/roster-main/roster-table/roster-table.component';
 import {MythicRosterTableComponent} from "./components/roster-main/mythic-roster-table/mythic-roster-table.component";
+import { RecruitmentFormComponent } from './components/recruitment-form/recruitment-form.component';
 
 const appRoutes: Routes = [
   {
@@ -59,7 +60,11 @@ const appRoutes: Routes = [
     {
       path: 'simulation',
       component: SimulationMainComponent
-    }
+    },
+  {
+    path: 'apply',
+    component: RecruitmentFormComponent
+  }
 ];
 
 @NgModule({
@@ -75,13 +80,15 @@ const appRoutes: Routes = [
     CharacterDetailsComponent,
     ItemRowComponent,
     RosterTableComponent,
-    MythicRosterTableComponent
+    MythicRosterTableComponent,
+    RecruitmentFormComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [
     WarcraftLogsService,

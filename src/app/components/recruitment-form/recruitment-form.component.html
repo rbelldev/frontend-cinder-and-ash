@@ -1,0 +1,49 @@
+<div class="jumbotron">
+  <h1>Join Cinder and Ash!</h1>
+  <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by
+    the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are
+    bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same
+    as saying through shrinking from toil and pain.</p>
+</div>
+
+<h2>Apply Now!</h2>
+<form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+
+  <div class="alert alert-info">
+    Start by entering the <strong>SERVER</strong> and <strong>NAME</strong> of the character that you wish to apply with and click <strong>"Get Started!"</strong> (US Only).
+  </div>
+
+  <div class="row">
+
+    <div class="form-group col-md-6"
+         [ngClass]="{'has-error':!complexForm.controls['server'].valid && complexForm.controls['server'].touched}">
+
+      <label>Server Name:</label>
+      <input class="form-control" type="text" placeholder="Mal'Ganis"
+             [formControl]="complexForm.controls['server']">
+
+      <div
+        *ngIf="complexForm.controls['server'].hasError('required') && complexForm.controls['server'].touched"
+        class="alert alert-danger">You must include the server name of which your character belongs.
+      </div>
+    </div>
+
+    <div class="form-group col-md-6"
+         [ngClass]="{'has-error':!complexForm.controls['characterName'].valid && complexForm.controls['characterName'].touched}">
+
+      <label>Character Name:</label>
+      <input class="form-control" type="text" placeholder="Knute"
+             [formControl]="complexForm.controls['characterName']">
+
+      <div
+        *ngIf="complexForm.controls['characterName'].hasError('required') && complexForm.controls['characterName'].touched"
+        class="alert alert-danger">You must include your character name.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="!complexForm.valid">Get Started!</button>
+  </div>
+</form>
