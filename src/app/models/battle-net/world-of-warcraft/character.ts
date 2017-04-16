@@ -103,6 +103,37 @@ export class Character {
         return '#A330C9';
     }
   }
+
+  getClassColorForWhiteBackground():string{
+    switch (this.class) {
+      case '':
+        return '#D3D3D3';
+      case 'Warrior':
+        return '#C79C6E';
+      case 'Paladin':
+        return '#F58CBA';
+      case 'Hunter':
+        return '#ABD473';
+      case 'Rogue':
+        return '#FFF569';
+      case 'Priest':
+        return '#000000';
+      case 'Death Knight':
+        return '#C41F3B';
+      case 'Shaman':
+        return '#0070DE';
+      case 'Mage':
+        return '#69CCF0';
+      case 'Warlock':
+        return '#9482C9';
+      case 'Monk':
+        return '#00FF96';
+      case 'Druid':
+        return '#FF7D0A';
+      case 'Demon Hunter':
+        return '#A330C9';
+    }
+  }
 }
   // getClassIcon():string {
   //   const simpleClassName = this.class.replace(" ", "").toLowerCase();
