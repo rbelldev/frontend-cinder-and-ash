@@ -18,6 +18,7 @@ export class Character {
   guildRealm: string;
   equippedItems:EquippedItems;
   tierAssessment:TierAssessment;
+  progression:any;
 
   constructor(json: JSON) {
 
@@ -40,6 +41,10 @@ export class Character {
 
     if(json['items']){
       this.equippedItems = new EquippedItems(json['items']);
+    }
+
+    if(json['progression']){
+      this.progression = json['progression'];
     }
 
     this.tierAssessment = new TierAssessment(this);

@@ -10,23 +10,23 @@
 <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
 
   <div class="alert alert-info">
-    Start by entering the <strong>SERVER</strong> and <strong>NAME</strong> of the character that you wish to apply with and click <strong>"Get Started!"</strong> (US Only).
+    Start by entering the <strong>REALM</strong> and <strong>NAME</strong> of the character that you wish to apply with and click <strong>"Get Started!"</strong> (US Only).
   </div>
 
   <div class="row">
 
-    <!--#region Server  -->
+    <!--#region Realm  -->
 
     <div class="form-group col-md-6"
-         [ngClass]="{'has-error':!complexForm.controls['server'].valid && complexForm.controls['server'].touched}">
+         [ngClass]="{'has-error':!complexForm.controls['realmName'].valid && complexForm.controls['realmName'].touched}">
 
-      <label>Server Name:</label>
+      <label>Realm Name:</label>
       <input class="form-control" type="text" placeholder="Mal'Ganis"
-             [formControl]="complexForm.controls['server']">
+             [formControl]="complexForm.controls['realmName']">
 
       <div
-        *ngIf="complexForm.controls['server'].hasError('required') && complexForm.controls['server'].touched"
-        class="alert alert-danger">You must include the server name of which your character belongs.
+        *ngIf="complexForm.controls['realmName'].hasError('required') && complexForm.controls['realmName'].touched"
+        class="alert alert-danger">You must include the realm name of which your character belongs.
       </div>
     </div>
 

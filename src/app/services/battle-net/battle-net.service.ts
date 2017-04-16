@@ -67,6 +67,12 @@ export class BattleNetService {
       });
   }
 
-  // this.http.get(`${this.battleNetApiBaseUrl}/${this.characterEndPoint}/${this.realmName}/${guildMember.character.name}?fields=${charFields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`)
+  getCharacterForApplication(realmName:string, characterName:string):Observable<Character> {
+    const fields: string = 'items, progression';
 
+    return this.http.get(`${this.battleNetApiBaseUrl}/${this.characterEndPoint}/${realmName}/${characterName}?fields=${fields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`).map(
+      response => {
+        return new Character(response.json());
+      });
+  }
 }

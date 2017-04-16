@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {BattleNetService} from "../../services/battle-net/battle-net.service";
 
 @Component({
   selector: 'app-recruitment-form',
@@ -10,15 +11,23 @@ export class RecruitmentFormComponent {
 
   complexForm: FormGroup;
 
-  constructor(formBuilder: FormBuilder) {
+  constructor(private battleNetService: BattleNetService, formBuilder: FormBuilder) {
     this.complexForm = formBuilder.group({
-      server: [null, Validators.required],
-      characterName:[null, Validators.required],
+      realmName: [null, Validators.required],
+      characterName: [null, Validators.required],
     })
   }
 
   submitForm(value: any) {
     console.log(value);
+
+    this.battleNetService.getCharacterForApplication(this.complexForm.controls['realmName'].value, this.complexForm.controls['characterName'].value).subscribe((character) => {
+      if (character) {
+        console.log("Character Found! ", character);
+      } else {
+        console.log('error!');
+      }
+    });
   }
 
 }
