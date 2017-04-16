@@ -10,21 +10,21 @@ import {Router} from "@angular/router";
 })
 export class ApplyFormComponent {
 
-  complexForm: FormGroup;
+  getStartedForm: FormGroup;
   characterNotFound: boolean;
 
   constructor(private battleNetService: BattleNetService,
               formBuilder: FormBuilder,
               private router: Router) {
-    this.complexForm = formBuilder.group({
+    this.getStartedForm = formBuilder.group({
       realmName: [null, Validators.required],
       characterName: [null, Validators.required],
     })
   }
 
   submitForm(value: any) {
-    const realmName = this.complexForm.controls['realmName'].value;
-    const characterName = this.complexForm.controls['characterName'].value;
+    const realmName = this.getStartedForm.controls['realmName'].value;
+    const characterName = this.getStartedForm.controls['characterName'].value;
 
     this.characterNotFound = false;
 

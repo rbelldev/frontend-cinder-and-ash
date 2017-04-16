@@ -1,3 +1,254 @@
-<h2>Character Found!</h2>
-<h3 [ngStyle]="{'color': character.getClassColor()}">{{character.name}}</h3>
-<h4 [ngStyle]="{'color': character.getClassColor()}">{{character.talents.className}} {{character.class}}</h4>
+<h2 [ngStyle]="{'color': character.getClassColor()}">{{character.name}}</h2>
+<h3 [ngStyle]="{'color': character.getClassColor()}">{{character.talents.className}} {{character.class}}</h3>
+
+<div class="col-md-6 col-md-push-6">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Core Raid Nights</h3>
+    </div>
+    <div class="panel-body">
+      <p>Thursday: 8:00 PM - 11:00 PM (EST)</p>
+      <p>Friday: 8:00 PM - 11:00 PM (EST)</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Optional Farm Night</h3>
+    </div>
+    <div class="panel-body">
+      <p>Saturday: 8:00 PM - 11:00 PM (EST)</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Optional Rated Battle Grounds Night</h3>
+    </div>
+    <div class="panel-body">
+      <p>Wednesday: 8:00 PM - 11:00 PM (EST)</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <form [formGroup]="recruitmentForm" (ngSubmit)="submitForm(recruitmentForm.value)" style="padding-top: 20px"
+        class="col-md-6 col-md-pull-6">
+
+    <!--#region Is Main Character -->
+    <div class="form-group">
+      <label>Is {{character.name}} your Main Character?</label>
+      <div class="alert alert-danger"
+           *ngIf="!recruitmentForm.controls['isMainCharacter'].valid && recruitmentForm.controls['isMainCharacter'].touched">
+        You must indicate whether this is your Main.
+      </div>
+
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" value="Yes" [formControl]="recruitmentForm.controls['isMainCharacter']">
+          Yes
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" value="No" [formControl]="recruitmentForm.controls['isMainCharacter']">
+          No
+        </label>
+      </div>
+
+    </div>
+    <!--#endregion -->
+
+    <!--#region Main Spec -->
+
+
+    <div class="form-group"
+         [ngClass]="{'has-error':!recruitmentForm.controls['mainSpec'].valid
+         && recruitmentForm.controls['mainSpec'].touched}">
+
+      <label>Main Class Specialization for {{character.name}}?</label>
+      <input class="form-control" type="text" placeholder="" value="{{character.talents.className}}"
+             [formControl]="recruitmentForm.controls['mainSpec']">
+
+      <div
+        *ngIf="recruitmentForm.controls['mainSpec'].hasError('required')
+        && recruitmentForm.controls['mainSpec'].touched"
+        class="alert alert-danger">You must include your class specialization.
+      </div>
+    </div>
+
+
+    <!--#endregion -->
+
+    <!--#region Off Specs -->
+
+
+    <div class="form-group"
+         [ngClass]="{'has-error':!recruitmentForm.controls['offspecExperienceAndProgress'].valid
+         && recruitmentForm.controls['offspecExperienceAndProgress'].touched}">
+
+      <label>What is your progress and experience for your off-specializations?</label>
+      <textarea class="form-control" style="width: 100%"
+                [formControl]="recruitmentForm.controls['offspecExperienceAndProgress']" rows="3"></textarea>
+
+
+      <div
+        *ngIf="recruitmentForm.controls['offspecExperienceAndProgress'].hasError('required')
+        && recruitmentForm.controls['offspecExperienceAndProgress'].touched"
+        class="alert alert-danger">Please briefly describe your experience and progress of your off-specialization, or
+        simply enter 'none'.
+      </div>
+    </div>
+
+
+    <!--#endregion -->
+
+    <!--#region Previous Raiding Experience -->
+
+
+    <div class="form-group"
+         [ngClass]="{'has-error':!recruitmentForm.controls['previousRaidingExperience'].valid
+         && recruitmentForm.controls['previousRaidingExperience'].touched}">
+
+      <label>What is your previous raiding experience?</label>
+      <textarea class="form-control" style="width: 100%"
+                [formControl]="recruitmentForm.controls['previousRaidingExperience']" rows="3"></textarea>
+
+      <div
+        *ngIf="recruitmentForm.controls['previousRaidingExperience'].hasError('required')
+        && recruitmentForm.controls['previousRaidingExperience'].touched"
+        class="alert alert-danger">Please briefly describe your previous raid experience, or simply enter 'none'.
+      </div>
+    </div>
+
+
+    <!--#endregion -->
+
+    <!--#region Raiding Motivation -->
+
+
+    <div class="form-group"
+         [ngClass]="{'has-error':!recruitmentForm.controls['motivationForRaiding'].valid
+         && recruitmentForm.controls['motivationForRaiding'].touched}">
+
+      <label>What is your motivation for raiding?</label>
+      <textarea class="form-control" style="width: 100%"
+                [formControl]="recruitmentForm.controls['motivationForRaiding']" rows="3"></textarea>
+
+      <div
+        *ngIf="recruitmentForm.controls['motivationForRaiding'].hasError('required')
+        && recruitmentForm.controls['motivationForRaiding'].touched"
+        class="alert alert-danger">Please briefly describe your motivation for raiding.
+      </div>
+    </div>
+
+
+    <!--#endregion -->
+
+    <!--#region Self Description -->
+
+
+    <div class="form-group"
+         [ngClass]="{'has-error':!recruitmentForm.controls['selfDescription'].valid
+         && recruitmentForm.controls['selfDescription'].touched}">
+
+      <label>Tell us about yourself:</label>
+      <textarea class="form-control" style="width: 100%"
+                [formControl]="recruitmentForm.controls['selfDescription']" rows="3"></textarea>
+
+      <div
+        *ngIf="recruitmentForm.controls['selfDescription'].hasError('required')
+        && recruitmentForm.controls['selfDescription'].touched"
+        class="alert alert-danger">Please briefly describe yourself.
+      </div>
+    </div>
+
+    <!--#endregion -->
+
+    <!--#region Raid Nights -->
+
+    <div class="form-group"
+         [ngClass]="{'has-error':!recruitmentForm.controls['canYouMakeAllRaidNights'].valid
+         && recruitmentForm.controls['canYouMakeAllRaidNights'].touched}">
+
+      <label>Can you make all Core Raid Nights? If not, please explain:</label>
+      <textarea class="form-control" style="width: 100%"
+                [formControl]="recruitmentForm.controls['canYouMakeAllRaidNights']" rows="3"></textarea>
+
+      <div
+        *ngIf="recruitmentForm.controls['canYouMakeAllRaidNights'].hasError('required')
+        && recruitmentForm.controls['canYouMakeAllRaidNights'].touched"
+        class="alert alert-danger">Please confirm if you can make all the raid nights.
+      </div>
+    </div>
+
+    <!--#endregion -->
+
+    <!--#region Raid Log Link -->
+
+    <div class="form-group"
+         [ngClass]="{'has-error':!recruitmentForm.controls['raidLogLink'].valid
+         && recruitmentForm.controls['raidLogLink'].touched}">
+
+      <label>A link to a raid log for {{character.name}}:</label>
+      <input class="form-control" type="text" placeholder=""
+             [formControl]="recruitmentForm.controls['raidLogLink']">
+
+      <div
+        *ngIf="recruitmentForm.controls['raidLogLink'].hasError('required')
+        && recruitmentForm.controls['raidLogLink'].touched"
+        class="alert alert-danger">You must include a link to a raid log.
+      </div>
+    </div>
+
+    <!--#endregion -->
+
+    <!--#region Raid Log Analysis-->
+
+    <div class="form-group"
+         [ngClass]="{'has-error':!recruitmentForm.controls['raidLogPerformanceDetails'].valid
+         && recruitmentForm.controls['raidLogPerformanceDetails'].touched}">
+
+      <label>For the raid log above, explain your performance and give insight for potential improvement where needed:</label>
+      <textarea class="form-control" style="width: 100%"
+                [formControl]="recruitmentForm.controls['raidLogPerformanceDetails']" rows="3"></textarea>
+
+      <div
+        *ngIf="recruitmentForm.controls['raidLogPerformanceDetails'].hasError('required')
+        && recruitmentForm.controls['raidLogPerformanceDetails'].touched"
+        class="alert alert-danger">Please provide some analysis for the log provided above.
+      </div>
+    </div>
+
+    <!--#endregion -->
+
+    <!--#region Contact Info -->
+
+    <div class="form-group"
+         [ngClass]="{'has-error':!recruitmentForm.controls['contactInfo'].valid
+         && recruitmentForm.controls['contactInfo'].touched}">
+
+      <label>How may we contact you?</label>
+      <input class="form-control" type="text" placeholder="Battle.Net ID or Email or Discord ID"
+             [formControl]="recruitmentForm.controls['contactInfo']">
+
+      <div
+        *ngIf="recruitmentForm.controls['contactInfo'].hasError('required')
+        && recruitmentForm.controls['contactInfo'].touched"
+        class="alert alert-danger">You must include contact information
+      </div>
+    </div>
+
+    <!--#endregion -->
+
+    <div class="form-group" style="padding-top: 20px">
+      <button type="submit" class="btn btn-primary" [disabled]="!recruitmentForm.valid">Submit</button>
+    </div>
+
+  </form>
+
+</div>
+

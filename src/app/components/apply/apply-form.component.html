@@ -7,7 +7,7 @@
 </div>
 
 <h2>Apply Now!</h2>
-<form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+<form [formGroup]="getStartedForm" (ngSubmit)="submitForm(getStartedForm.value)">
 
   <div class="alert alert-info">
     Start by entering the <strong>REALM</strong> and <strong>NAME</strong> of the character that you wish to apply with and click <strong>"Get Started!"</strong> (US Only).
@@ -22,14 +22,14 @@
     <!--#region Realm  -->
 
     <div class="form-group col-md-6"
-         [ngClass]="{'has-error':!complexForm.controls['realmName'].valid && complexForm.controls['realmName'].touched}">
+         [ngClass]="{'has-error':!getStartedForm.controls['realmName'].valid && getStartedForm.controls['realmName'].touched}">
 
       <label>Realm Name:</label>
       <input class="form-control" type="text" placeholder="Mal'Ganis"
-             [formControl]="complexForm.controls['realmName']">
+             [formControl]="getStartedForm.controls['realmName']">
 
       <div
-        *ngIf="complexForm.controls['realmName'].hasError('required') && complexForm.controls['realmName'].touched"
+        *ngIf="getStartedForm.controls['realmName'].hasError('required') && getStartedForm.controls['realmName'].touched"
         class="alert alert-danger">You must include the realm name of which your character belongs.
       </div>
     </div>
@@ -39,14 +39,14 @@
     <!--#region Character Name  -->
 
     <div class="form-group col-md-6"
-         [ngClass]="{'has-error':!complexForm.controls['characterName'].valid && complexForm.controls['characterName'].touched}">
+         [ngClass]="{'has-error':!getStartedForm.controls['characterName'].valid && getStartedForm.controls['characterName'].touched}">
 
       <label>Character Name:</label>
       <input class="form-control" type="text" placeholder="Knute"
-             [formControl]="complexForm.controls['characterName']">
+             [formControl]="getStartedForm.controls['characterName']">
 
       <div
-        *ngIf="complexForm.controls['characterName'].hasError('required') && complexForm.controls['characterName'].touched"
+        *ngIf="getStartedForm.controls['characterName'].hasError('required') && getStartedForm.controls['characterName'].touched"
         class="alert alert-danger">You must include your character name.
       </div>
     </div>
@@ -56,7 +56,7 @@
   </div>
 
   <div class="form-group">
-    <button type="submit" class="btn btn-primary" [disabled]="!complexForm.valid">Get Started!</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!getStartedForm.valid">Get Started!</button>
   </div>
 
 </form>
