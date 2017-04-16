@@ -20,11 +20,13 @@ import {GuildResolver} from "./resolvers/guild.resolver";
 import {BattleNetService} from "./services/battle-net/battle-net.service";
 import {SafePipe} from "./pipes/safe-pipe";
 import { CharacterDetailsComponent } from './components/roster-main/character-details/character-details.component';
-import {CharacterResolver} from "./resolvers/characte.resolver";
+import {CharacterResolver} from "./resolvers/character.resolver";
 import { ItemRowComponent } from './components/roster-main/character-details/item-row/item-row.component';
 import { RosterTableComponent } from './components/roster-main/roster-table/roster-table.component';
 import {MythicRosterTableComponent} from "./components/roster-main/mythic-roster-table/mythic-roster-table.component";
 import { ApplyFormComponent } from './components/apply/apply-form.component';
+import { RecruitmentFormComponent } from './components/apply/recruitment-form/recruitment-form.component';
+import {CharacterRecruitmentResolver} from "./resolvers/character-recruitment.resolver";
 
 const appRoutes: Routes = [
   {
@@ -64,7 +66,14 @@ const appRoutes: Routes = [
   {
     path: 'apply',
     component: ApplyFormComponent
-  }
+  },
+  {
+    path: 'apply/:realm/:name',
+    component: RecruitmentFormComponent,
+    resolve: {
+      character: CharacterRecruitmentResolver
+    }
+  },
 ];
 
 @NgModule({
@@ -81,7 +90,8 @@ const appRoutes: Routes = [
     ItemRowComponent,
     RosterTableComponent,
     MythicRosterTableComponent,
-    ApplyFormComponent
+    ApplyFormComponent,
+    RecruitmentFormComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -96,7 +106,8 @@ const appRoutes: Routes = [
     GuildLogListResolver,
     GuildResolver,
     LogResolver,
-    CharacterResolver
+    CharacterResolver,
+    CharacterRecruitmentResolver
   ],
   bootstrap: [AppComponent]
 })
