@@ -1,6 +1,7 @@
 import {ClassSpec} from "./class-spec";
 import {EquippedItems} from "./equipped-items";
 import {TierAssessment} from "../../../helpers/TierAssessment";
+import {Talents} from "./talents";
 
 export class Character {
 
@@ -19,6 +20,7 @@ export class Character {
   equippedItems:EquippedItems;
   tierAssessment:TierAssessment;
   progression:any;
+  talents:Talents;
 
   constructor(json: JSON) {
 
@@ -45,6 +47,10 @@ export class Character {
 
     if(json['progression']){
       this.progression = json['progression'];
+    }
+
+    if(json['talents']){
+      this.talents = new Talents(json['talents']);
     }
 
     this.tierAssessment = new TierAssessment(this);

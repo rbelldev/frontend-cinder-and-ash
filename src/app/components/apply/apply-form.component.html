@@ -13,6 +13,10 @@
     Start by entering the <strong>REALM</strong> and <strong>NAME</strong> of the character that you wish to apply with and click <strong>"Get Started!"</strong> (US Only).
   </div>
 
+  <div class="alert alert-warning" *ngIf="characterNotFound">
+    Your character was not found. Please make sure you have entered the correct information.
+  </div>
+
   <div class="row">
 
     <!--#region Realm  -->
@@ -54,4 +58,5 @@
   <div class="form-group">
     <button type="submit" class="btn btn-primary" [disabled]="!complexForm.valid">Get Started!</button>
   </div>
+
 </form>

@@ -20,7 +20,8 @@ export class BattleNetService {
   private guildEndPoint: string = 'wow/guild';
   private characterEndPoint: string = 'wow/character';
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
+  }
 
   getGuildRoster(): Observable<Guild> {
     const guildName: string = 'Cinder%20and%20Ash';
@@ -30,7 +31,7 @@ export class BattleNetService {
       response => {
         const guild = new Guild(response.json());
 
-        let mythicRoster:GuildMember[] = guild.getMythicTanks();
+        let mythicRoster: GuildMember[] = guild.getMythicTanks();
         mythicRoster = mythicRoster.concat(guild.getMythicHeals());
         mythicRoster = mythicRoster.concat(guild.getMythicMelee());
         mythicRoster = mythicRoster.concat(guild.getMythicRanged());
@@ -41,15 +42,15 @@ export class BattleNetService {
 
         let httpArray = [];
 
-        for(let i = 0; i < mythicRoster.length; i++){
+        for (let i = 0; i < mythicRoster.length; i++) {
           httpArray.push(this.http.get(`${this.battleNetApiBaseUrl}/${this.characterEndPoint}/${this.realmName}/${mythicRoster[i].character.name}?fields=${charFields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`)
-            .map( response =>{
+            .map(response => {
               let json = response.json();
               mythicRoster[i].character.equippedItems = new EquippedItems(json['items']);
-          }));
+            }));
         }
 
-        return Observable.forkJoin(httpArray).map( res => {
+        return Observable.forkJoin(httpArray).map(res => {
           return guild;
         })
 
@@ -58,7 +59,7 @@ export class BattleNetService {
     return map;
   }
 
-  getCharacterDetails(characterName:string): Observable<Character> {
+  getCharacterDetails(characterName: string): Observable<Character> {
     const fields: string = 'items';
 
     return this.http.get(`${this.battleNetApiBaseUrl}/${this.characterEndPoint}/${this.realmName}/${characterName}?fields=${fields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`).map(
@@ -67,12 +68,17 @@ export class BattleNetService {
       });
   }
 
-  getCharacterForApplication(realmName:string, characterName:string):Observable<Character> {
-    const fields: string = 'items, progression';
+  getCharacterForApplication(realmName: string, characterName: string): Observable<Character> {
+    const fields: string = 'items, progression, talents';
 
     return this.http.get(`${this.battleNetApiBaseUrl}/${this.characterEndPoint}/${realmName}/${characterName}?fields=${fields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`).map(
-      response => {
-        return new Character(response.json());
+      (response) => {
+        let character: Character = null;
+        try {
+          character = new Character(response.json());
+        } catch (e) {
+        }
+        return character
       });
   }
 }
