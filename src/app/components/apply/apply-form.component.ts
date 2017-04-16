@@ -3,11 +3,11 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {BattleNetService} from "../../services/battle-net/battle-net.service";
 
 @Component({
-  selector: 'app-recruitment-form',
-  templateUrl: './recruitment-form.component.html',
-  styleUrls: ['./recruitment-form.component.css']
+  selector: 'apply-form',
+  templateUrl: 'apply-form.component.html',
+  styleUrls: ['apply-form.component.css']
 })
-export class RecruitmentFormComponent {
+export class ApplyFormComponent {
 
   complexForm: FormGroup;
 
