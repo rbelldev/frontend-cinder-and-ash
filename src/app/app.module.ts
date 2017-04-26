@@ -27,6 +27,7 @@ import {MythicRosterTableComponent} from "./components/roster-main/mythic-roster
 import { ApplyFormComponent } from './components/apply/apply-form.component';
 import { RecruitmentFormComponent } from './components/apply/recruitment-form/recruitment-form.component';
 import {CharacterRecruitmentResolver} from "./resolvers/character-recruitment.resolver";
+import {CinderAndAshService} from "./services/cinder-and-ash/cinder-and-ash.service";
 
 const appRoutes: Routes = [
   {
@@ -107,7 +108,8 @@ const appRoutes: Routes = [
     GuildResolver,
     LogResolver,
     CharacterResolver,
-    CharacterRecruitmentResolver
+    CharacterRecruitmentResolver,
+    CinderAndAshService
   ],
   bootstrap: [AppComponent]
 })
