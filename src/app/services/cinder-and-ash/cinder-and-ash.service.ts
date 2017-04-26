@@ -7,9 +7,9 @@ export class CinderAndAshService {
 
   constructor(private http: Http) { }
 
-  postGuildApplication(application:string):Observable<Response>{
+  postGuildApplication(application:string){
     let path = "https://dev-cinder-and-ash-api.herokuapp.com/application";
-    return this.http.post(path, application);
+    return this.http.post(path, application).subscribe(() => {});
   }
 
 }
