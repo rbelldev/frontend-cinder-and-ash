@@ -63,9 +63,7 @@ export class Guild {
 
   mythicTanks:string[] = ['Embersong', 'Japostrophe'];
   mythicHeals:string[] = ['Cattìbrie', 'Kÿra', 'Elderwulf', 'Kenlòre'];
-  mythicRanged:string[] = ['Twinslayerzz', 'Hezbolah', 'Gingerbrows', 'Revërie', 'Calissta', 'Doused'];
+  mythicRanged:string[] = ['Twinslayerzz', 'Hezbolah', 'Gingerbrows', 'Revërie', 'Calissta', 'Doused', 'Chandresh'];
   mythicMelee:string[] = ['Dasan', 'Knutè', 'Kirelion', 'Sçythér', 'Supbae', 'Djeckt', 'Bigdoss'];
-
-  // Trialing: doss and chand, meepo?
 
 }
