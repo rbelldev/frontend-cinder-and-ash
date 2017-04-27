@@ -117,7 +117,7 @@ export class Character {
       case 'Rogue':
         return '#FFF569';
       case 'Priest':
-        return '#000000';
+        return '#FFFFFF';
       case 'Death Knight':
         return '#C41F3B';
       case 'Shaman':
