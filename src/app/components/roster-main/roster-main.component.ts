@@ -20,6 +20,7 @@ export class RosterMainComponent {
   mythicHeals:GuildMember[];
   mythicRanged:GuildMember[];
   mythicMelee:GuildMember[];
+  mythicTrials:GuildMember[];
 
   currentTierGroupFilter: string = 'All';
   currentSlotFilter: string = 'All';
@@ -46,6 +47,7 @@ export class RosterMainComponent {
       this.mythicHeals = this.guild.getMythicHeals();
       this.mythicRanged = this.guild.getMythicRanged();
       this.mythicMelee = this.guild.getMythicMelee();
+      this.mythicTrials = this.guild.getMythicTrials();
 
     } else {
 
@@ -53,6 +55,7 @@ export class RosterMainComponent {
       this.mythicHeals = this.guild.getMythicHeals().filter( guildMember => guildMember.character.tierAssessment.getTierGroup() == tierGroup);
       this.mythicRanged = this.guild.getMythicRanged().filter( guildMember => guildMember.character.tierAssessment.getTierGroup() == tierGroup);
       this.mythicMelee = this.guild.getMythicMelee().filter( guildMember => guildMember.character.tierAssessment.getTierGroup() == tierGroup);
+      this.mythicTrials = this.guild.getMythicTrials().filter( guildMember => guildMember.character.tierAssessment.getTierGroup() == tierGroup);
 
     }
 

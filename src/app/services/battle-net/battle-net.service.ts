@@ -35,6 +35,7 @@ export class BattleNetService {
         mythicRoster = mythicRoster.concat(guild.getMythicHeals());
         mythicRoster = mythicRoster.concat(guild.getMythicMelee());
         mythicRoster = mythicRoster.concat(guild.getMythicRanged());
+        mythicRoster = mythicRoster.concat(guild.getMythicTrials());
 
         console.log(mythicRoster);
 

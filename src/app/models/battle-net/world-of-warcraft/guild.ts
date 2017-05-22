@@ -49,6 +49,10 @@ export class Guild {
     return this.findMembers(this.mythicMelee)
   }
 
+  getMythicTrials():GuildMember[]{
+    return this.findMembers(this.mythicTrials)
+  }
+
   findMembers(membersToFind:string[]):GuildMember[]{
     return this.guildMembers.filter( guildMember => membersToFind.indexOf(guildMember.character.name) > -1)
   }
@@ -61,9 +65,10 @@ export class Guild {
   achievementPoints:number;
   guildMembers:GuildMember[] = [];
 
-  mythicTanks:string[] = ['Embersong', 'Japostrophe'];
+  mythicTanks:string[] = ['Embersong', 'Graybrew'];
   mythicHeals:string[] = ['Cattìbrie', 'Kÿra', 'Elderwulf', 'Kenlòre'];
-  mythicRanged:string[] = ['Twinslayerzz', 'Hezbolah', 'Gingerbrows', 'Revërie', 'Calissta', 'Doused', 'Chandresh'];
+  mythicRanged:string[] = ['Twinslayerzz', 'Hezbolah', 'Gingerbrows', 'Revërie', 'Calissta', 'Chandresh', 'Supplicant'];
   mythicMelee:string[] = ['Dasan', 'Knutè', 'Kirelion', 'Sçythér', 'Supbae', 'Djeckt', 'Bigdoss'];
+  mythicTrials:string[] = ['Sapcraklepop', 'Elpickle', 'Krnofex'];
 
 }
