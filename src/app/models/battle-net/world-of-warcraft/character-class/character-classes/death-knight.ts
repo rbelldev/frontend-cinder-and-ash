@@ -1,12 +1,12 @@
 import {CharacterClass} from "../character-class";
-import {CharacterClassSpec} from "../character-class-spec";
+import {CharacterClassSpecialization} from "../character-class-specialization";
 
 export class DeathKnight extends CharacterClass {
   constructor() {
     super('Death Knight', [
-        new CharacterClassSpec('Blood', "TANK", false),
-        new CharacterClassSpec('Frost', "DPS", false),
-        new CharacterClassSpec('Unholy', "DPS", false)
+        new CharacterClassSpecialization('Blood', "TANK", false),
+        new CharacterClassSpecialization('Frost', "DPS", false),
+        new CharacterClassSpecialization('Unholy', "DPS", false)
       ]
     );
   }

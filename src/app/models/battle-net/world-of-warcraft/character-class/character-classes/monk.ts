@@ -1,12 +1,12 @@
 import {CharacterClass} from "../character-class";
-import {CharacterClassSpec} from "../character-class-spec";
+import {CharacterClassSpecialization} from "../character-class-specialization";
 
 export class Monk extends CharacterClass {
   constructor() {
     super('Monk', [
-        new CharacterClassSpec('Brewmaster', "TANK", false),
-        new CharacterClassSpec('Mistweaver', "HEALING", false),
-        new CharacterClassSpec('Windwalker', "DPS", false)
+        new CharacterClassSpecialization('Brewmaster', "TANK", false),
+        new CharacterClassSpecialization('Mistweaver', "HEALING", false),
+        new CharacterClassSpecialization('Windwalker', "DPS", false)
       ]
     );
   }

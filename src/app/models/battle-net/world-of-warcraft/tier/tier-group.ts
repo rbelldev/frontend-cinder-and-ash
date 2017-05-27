@@ -1,4 +1,4 @@
-import {CharacterClassSpec} from "../character-class/character-class-spec";
+import {CharacterClassSpecialization} from "../character-class/character-class-specialization";
 export class TierGroup{
-  constructor(public characterClassSpecs:CharacterClassSpec[]){}
+  constructor(public characterClassSpecs:CharacterClassSpecialization[]){}
 }

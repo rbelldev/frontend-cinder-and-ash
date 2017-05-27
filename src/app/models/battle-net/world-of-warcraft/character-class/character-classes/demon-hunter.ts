@@ -1,11 +1,11 @@
 import {CharacterClass} from "../character-class";
-import {CharacterClassSpec} from "../character-class-spec";
+import {CharacterClassSpecialization} from "../character-class-specialization";
 
 export class DemonHunter extends CharacterClass {
   constructor() {
     super('Demon Hunter', [
-        new CharacterClassSpec('Havoc', "DPS", false),
-        new CharacterClassSpec('Vengeance', "TANK", false)
+        new CharacterClassSpecialization('Havoc', "DPS", false),
+        new CharacterClassSpecialization('Vengeance', "TANK", false)
       ]
     );
   }

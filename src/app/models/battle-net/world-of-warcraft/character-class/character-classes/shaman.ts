@@ -1,12 +1,12 @@
 import {CharacterClass} from "../character-class";
-import {CharacterClassSpec} from "../character-class-spec";
+import {CharacterClassSpecialization} from "../character-class-specialization";
 
 export class Shaman extends CharacterClass {
   constructor() {
     super('Shaman', [
-        new CharacterClassSpec('Elemental', "DPS", false),
-        new CharacterClassSpec('Enhancement', "DPS", false),
-        new CharacterClassSpec('Restoration', "HEALING", false)
+        new CharacterClassSpecialization('Elemental', "DPS", false),
+        new CharacterClassSpecialization('Enhancement', "DPS", false),
+        new CharacterClassSpecialization('Restoration', "HEALING", false)
       ]
     );
   }

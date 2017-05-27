@@ -1,8 +1,11 @@
-import {CharacterClassSpec} from "./character-class-spec";
+import {CharacterClassSpecialization} from "./character-class-specialization";
 export class CharacterClass {
-  constructor(public name:string, public classSpecs:CharacterClassSpec[]){}
+  constructor(
+    public name:string,
+    public classSpecs:CharacterClassSpecialization[]
+  ){}
 
-  getActiveSpec():CharacterClassSpec{
+  getActiveSpec():CharacterClassSpecialization{
     return this.classSpecs.find(spec => {return spec.active})
   }
 }

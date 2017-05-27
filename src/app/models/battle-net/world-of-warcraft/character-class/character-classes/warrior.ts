@@ -1,12 +1,12 @@
 import {CharacterClass} from "../character-class";
-import {CharacterClassSpec} from "../character-class-spec";
+import {CharacterClassSpecialization} from "../character-class-specialization";
 
 export class Warrior extends CharacterClass {
   constructor() {
     super('Warrior', [
-        new CharacterClassSpec('Fury', "DPS", false),
-        new CharacterClassSpec('Arms', "DPS", false),
-        new CharacterClassSpec('Protection', "TANK", false)
+        new CharacterClassSpecialization('Fury', "DPS", false),
+        new CharacterClassSpecialization('Arms', "DPS", false),
+        new CharacterClassSpecialization('Protection', "TANK", false)
       ]
     );
   }

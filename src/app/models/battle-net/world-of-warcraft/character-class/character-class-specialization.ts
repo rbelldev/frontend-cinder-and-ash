@@ -1,4 +1,4 @@
-export class CharacterClassSpec {
+export class CharacterClassSpecialization {
 
   constructor(
     public name:string,

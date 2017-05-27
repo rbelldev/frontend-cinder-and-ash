@@ -1,12 +1,12 @@
 import {CharacterClass} from "../character-class";
-import {CharacterClassSpec} from "../character-class-spec";
+import {CharacterClassSpecialization} from "../character-class-specialization";
 
 export class Warlock extends CharacterClass {
   constructor() {
     super('Warlock', [
-        new CharacterClassSpec('Affliction', "DPS", false),
-        new CharacterClassSpec('Demonology', "DPS", false),
-        new CharacterClassSpec('Destruction', "DPS", false)
+        new CharacterClassSpecialization('Affliction', "DPS", false),
+        new CharacterClassSpecialization('Demonology', "DPS", false),
+        new CharacterClassSpecialization('Destruction', "DPS", false)
       ]
     );
   }

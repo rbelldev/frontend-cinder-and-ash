@@ -1,12 +1,12 @@
 import {CharacterClass} from "../character-class";
-import {CharacterClassSpec} from "../character-class-spec";
+import {CharacterClassSpecialization} from "../character-class-specialization";
 
 export class Mage extends CharacterClass {
   constructor() {
     super('Mage', [
-        new CharacterClassSpec('Arcane', "DPS", false),
-        new CharacterClassSpec('Frost', "DPS", false),
-        new CharacterClassSpec('Fire', "DPS", false)
+        new CharacterClassSpecialization('Arcane', "DPS", false),
+        new CharacterClassSpecialization('Frost', "DPS", false),
+        new CharacterClassSpecialization('Fire', "DPS", false)
       ]
     );
   }

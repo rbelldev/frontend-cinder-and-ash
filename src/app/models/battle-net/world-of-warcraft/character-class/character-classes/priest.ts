@@ -1,12 +1,12 @@
 import {CharacterClass} from "../character-class";
-import {CharacterClassSpec} from "../character-class-spec";
+import {CharacterClassSpecialization} from "../character-class-specialization";
 
 export class Priest extends CharacterClass {
   constructor() {
     super('Priest', [
-        new CharacterClassSpec('Discipline', "HEALING", false),
-        new CharacterClassSpec('Holy', "HEALING", false),
-        new CharacterClassSpec('Shadow', "DPS", false)
+        new CharacterClassSpecialization('Discipline', "HEALING", false),
+        new CharacterClassSpecialization('Holy', "HEALING", false),
+        new CharacterClassSpecialization('Shadow', "DPS", false)
       ]
     );
   }
