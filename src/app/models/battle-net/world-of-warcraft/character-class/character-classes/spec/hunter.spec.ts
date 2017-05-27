@@ -2,20 +2,20 @@ import {Hunter} from "../hunter";
 
 describe('Hunter', () => {
 
-  let paladin = new Hunter();
+  let hunter = new Hunter();
 
   it('should have the correct class name', () => {
-    expect(paladin.name).toEqual('Hunter')
+    expect(hunter.name).toEqual('Hunter')
   });
 
   describe('Class Specs', () => {
 
     it('Should have 3 class specs', () => {
-      expect(paladin.classSpecs.length).toEqual(3);
+      expect(hunter.classSpecs.length).toEqual(3);
     });
 
     it('Should have a Beast Mastery spec', () => {
-      const spec = paladin.classSpecs.find(spec => {
+      const spec = hunter.classSpecs.find(spec => {
         return spec.name == 'Beast Mastery'
       });
 
@@ -24,7 +24,7 @@ describe('Hunter', () => {
     });
 
     it('Should have a Marksmanship spec', () => {
-      const spec = paladin.classSpecs.find(spec => {
+      const spec = hunter.classSpecs.find(spec => {
         return spec.name == 'Marksmanship'
       });
 
@@ -33,7 +33,7 @@ describe('Hunter', () => {
     });
 
     it('Should have a Survival spec', () => {
-      const spec = paladin.classSpecs.find(spec => {
+      const spec = hunter.classSpecs.find(spec => {
         return spec.name == 'Survival'
       });
 
