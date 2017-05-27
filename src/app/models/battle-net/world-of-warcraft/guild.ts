@@ -33,6 +33,17 @@ export class Guild {
     }
   }
 
+  getMythicRoster(): GuildMember[]{
+    let mythicRoster: GuildMember[] = this.getMythicTanks();
+
+    mythicRoster = mythicRoster.concat(this.getMythicHeals());
+    mythicRoster = mythicRoster.concat(this.getMythicMelee());
+    mythicRoster = mythicRoster.concat(this.getMythicRanged());
+    mythicRoster = mythicRoster.concat(this.getMythicTrials());
+
+    return mythicRoster;
+  }
+
   getMythicTanks():GuildMember[]{
     return this.findMembers(this.mythicTanks)
   }

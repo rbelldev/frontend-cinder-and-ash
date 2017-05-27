@@ -1,4 +1,4 @@
-import {ClassSpec} from "./class-spec";
+import {CharacterClassSpec} from "./character-class/character-class-spec";
 import {EquippedItems} from "./equipped-items";
 import {TierAssessment} from "../../../helpers/TierAssessment";
 import {Talents} from "./talents";
@@ -10,7 +10,7 @@ export class Character {
   battleGroup: string;
   class: string;
   classId: string;
-  classSpec: ClassSpec;
+  classSpec: CharacterClassSpec;
   race: string;
   gender: string;
   level: number;
@@ -38,7 +38,9 @@ export class Character {
     this.guildRealm = json['guildRealm'];
 
     if (json['spec']) {
-      this.classSpec = new ClassSpec(json['spec']);
+      // this.classSpec = new CharacterClassSpec(json['spec']['name'], json['spec']['role']);
+      console.log('!@#!@#!@#');
+      console.log(this.classSpec);
     }
 
     if(json['items']){

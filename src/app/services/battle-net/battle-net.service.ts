@@ -27,28 +27,24 @@ export class BattleNetService {
     const guildName: string = 'Cinder%20and%20Ash';
     const fields: string = 'members%2C+ranks';
 
-    const map = this.http.get(`${this.battleNetApiBaseUrl}/${this.guildEndPoint}/${this.realmName}/${guildName}?fields=${fields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`).flatMap(
+    return this.http.get(`${this.battleNetApiBaseUrl}/${this.guildEndPoint}/${this.realmName}/${guildName}?fields=${fields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`).flatMap(
       response => {
         const guild = new Guild(response.json());
 
-        let mythicRoster: GuildMember[] = guild.getMythicTanks();
-        mythicRoster = mythicRoster.concat(guild.getMythicHeals());
-        mythicRoster = mythicRoster.concat(guild.getMythicMelee());
-        mythicRoster = mythicRoster.concat(guild.getMythicRanged());
-        mythicRoster = mythicRoster.concat(guild.getMythicTrials());
-
-        console.log(mythicRoster);
+        let mythicRoster: GuildMember[] = guild.getMythicRoster();
 
         const charFields: string = 'items';
 
         let httpArray = [];
 
         for (let i = 0; i < mythicRoster.length; i++) {
-          httpArray.push(this.http.get(`${this.battleNetApiBaseUrl}/${this.characterEndPoint}/${this.realmName}/${mythicRoster[i].character.name}?fields=${charFields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`)
+          const characterInfo = this.http.get(`${this.battleNetApiBaseUrl}/${this.characterEndPoint}/${this.realmName}/${mythicRoster[i].character.name}?fields=${charFields}&locale=${this.locale}&apikey=${this.PUBLIC_KEY}`)
             .map(response => {
               let json = response.json();
               mythicRoster[i].character.equippedItems = new EquippedItems(json['items']);
-            }));
+            });
+
+          httpArray.push(characterInfo);
         }
 
         return Observable.forkJoin(httpArray).map(res => {
@@ -56,8 +52,6 @@ export class BattleNetService {
         })
 
       });
-
-    return map;
   }
 
   getCharacterDetails(characterName: string): Observable<Character> {
