@@ -2,7 +2,7 @@ import {CharacterClass} from "./character-class";
 import {Warrior} from "./character-classes/warrior";
 import {Paladin} from "./character-classes/paladin";
 import {Hunter} from "./character-classes/hunter";
-import {Rouge} from "./character-classes/rouge";
+import {Rogue} from "./character-classes/rogue";
 import {Priest} from "./character-classes/priest";
 import {DeathKnight} from "./character-classes/death-knight";
 import {Shaman} from "./character-classes/shaman";
@@ -19,7 +19,7 @@ export class CharacterClassFactory {
     new Warrior(),
     new Paladin(),
     new Hunter(),
-    new Rouge(),
+    new Rogue(),
     new Priest(),
     new DeathKnight(),
     new Shaman(),
@@ -31,7 +31,37 @@ export class CharacterClassFactory {
   ];
 
   public static buildClass(classIndex:number):CharacterClass{
-    return CharacterClassFactory.classObjectOrder[classIndex];
+    switch (classIndex) {
+      case 0:
+        return null;
+      case 1:
+        return new Warrior();
+      case 2:
+        return new Paladin();
+      case 3:
+        return new Hunter();
+      case 4:
+        return new Rogue();
+      case 5:
+        return new Priest();
+      case 6:
+        return new DeathKnight();
+      case 7:
+        return new Shaman();
+      case 8:
+        return new Mage();
+      case 9:
+        return new Warlock();
+      case 10:
+        return new Monk();
+      case 11:
+        return new Druid();
+      case 12:
+        return new DemonHunter();
+      default:
+        return null;
+
+    }
   }
 
 }

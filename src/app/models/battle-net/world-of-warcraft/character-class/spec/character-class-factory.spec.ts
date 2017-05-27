@@ -1,7 +1,7 @@
 import {Warrior} from "../character-classes/warrior";
 import {Paladin} from "../character-classes/paladin";
 import {Hunter} from "../character-classes/hunter";
-import {Rouge} from "../character-classes/rouge";
+import {Rogue} from "../character-classes/rogue";
 import {Priest} from "../character-classes/priest";
 import {DeathKnight} from "../character-classes/death-knight";
 import {Shaman} from "../character-classes/shaman";
@@ -19,7 +19,7 @@ describe('Character Class Factory', () => {
     new Warrior(),
     new Paladin(),
     new Hunter(),
-    new Rouge(),
+    new Rogue(),
     new Priest(),
     new DeathKnight(),
     new Shaman(),

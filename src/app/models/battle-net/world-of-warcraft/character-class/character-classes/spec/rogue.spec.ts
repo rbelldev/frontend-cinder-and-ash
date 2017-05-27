@@ -1,11 +1,11 @@
-import {Rouge} from "../rouge";
+import {Rogue} from "../rogue";
 
-describe('Rouge', () => {
+describe('Rogue', () => {
 
-  let rouge = new Rouge();
+  let rouge = new Rogue();
 
   it('should have the correct class name', () => {
-    expect(rouge.name).toEqual('Rouge')
+    expect(rouge.name).toEqual('Rogue')
   });
 
   describe('Class Specs', () => {

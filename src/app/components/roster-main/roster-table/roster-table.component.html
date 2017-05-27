@@ -14,12 +14,12 @@
 
     <tbody>
     <tr *ngFor="let guildMember of memberList" style="cursor: hand"
-        class="{{guildMember.class}}"
         [ngStyle]="{'color': guildMember.character.getClassColor()}" (click)="navigateToCharacterDetails(guildMember.character.name)">
+        <!--class="{{guildMember.class.name}}"-->
       <td>{{guildMember.guildRank.rankName}}</td>
       <td>{{guildMember.character.name}}</td>
       <td>{{guildMember.character.level}}</td>
-      <td>{{guildMember.character.classSpec.name}} {{guildMember.character.class}}</td>
+      <td>{{guildMember.character.class.getActiveSpec().name}} {{guildMember.character.class.name}}</td>
     </tr>
     </tbody>
 

@@ -7,13 +7,13 @@ export class TierAssessment {
   constructor(private character:Character){}
 
   hasPiece(slotName:string):boolean{
-    const tierName = this.classToTierNameMap[this.character.class];
+    const tierName = this.classToTierNameMap[this.character.class.name];
     const equippedItemInSlot = this.character.equippedItems[slotName];
     return equippedItemInSlot.name.indexOf(tierName) >= 0 || equippedItemInSlot.itemLevel == 940;
   }
 
   getTierGroup():string{
-    return this.classToTierGroupMap[this.character.class];
+    return this.classToTierGroupMap[this.character.class.name];
   }
 
   classToTierNameMap = {
@@ -29,7 +29,7 @@ export class TierAssessment {
     'Monk':'Enveloped Dissonance',
     'Druid':'Astral Warden',
     'Demon Hunter':'Second Sight'
-  }
+  };
 
   classToTierGroupMap = {
     'Warrior':'Protector',

@@ -6,7 +6,11 @@ export class CharacterClass {
   ){}
 
   getActiveSpec():CharacterClassSpecialization{
-    return this.classSpecs.find(spec => {return spec.active})
+    let activeSpec = this.classSpecs.find(spec => {return spec.active});
+    if(!activeSpec){
+      activeSpec = new CharacterClassSpecialization('undefined', '', true);
+    }
+    return activeSpec
   }
 
   setActiveSpec(specialization:string){

@@ -2,14 +2,15 @@ import {CharacterClassSpecialization} from "./character-class/character-class-sp
 import {EquippedItems} from "./equipped-items";
 import {TierAssessment} from "../../../helpers/TierAssessment";
 import {Talents} from "./talents";
+import {CharacterClassFactory} from "./character-class/character-class-factory";
+import {CharacterClass} from "./character-class/character-class";
 
 export class Character {
 
   name: string;
   realm: string;
   battleGroup: string;
-  class: string;
-  classId: string;
+  class: CharacterClass;
   classSpec: CharacterClassSpecialization;
   race: string;
   gender: string;
@@ -27,8 +28,12 @@ export class Character {
     this.name = json['name'];
     this.realm = json['realm'];
     this.battleGroup = json['battleGroup'];
-    this.class = this.classes[json['class']];
-    this.classId = this.classes[json['class']];
+
+    this.class = CharacterClassFactory.buildClass(json['class']);
+
+    if(json['spec']){
+      this.class.setActiveSpec(json['spec']['name']);
+    }
 
     this.race = json['race'];
     this.gender = json['gender'];
@@ -36,12 +41,6 @@ export class Character {
     this.achievementPoints = json['achievementPoints'];
     this.guild = json['guild'];
     this.guildRealm = json['guildRealm'];
-
-    if (json['spec']) {
-      // this.classSpec = new CharacterClassSpecialization(json['spec']['name'], json['spec']['role']);
-      console.log('!@#!@#!@#');
-      console.log(this.classSpec);
-    }
 
     if(json['items']){
       this.equippedItems = new EquippedItems(json['items']);
@@ -56,27 +55,11 @@ export class Character {
     }
 
     this.tierAssessment = new TierAssessment(this);
+
   }
 
-  classes: string[] = [
-    '',
-    'Warrior',
-    'Paladin',
-    'Hunter',
-    'Rogue',
-    'Priest',
-    'Death Knight',
-    'Shaman',
-    'Mage',
-    'Warlock',
-    'Monk',
-    'Druid',
-    'Demon Hunter'
-  ];
-
-
   getClassColor():string{
-    switch (this.class) {
+    switch (this.class.name) {
       case '':
         return '#D3D3D3';
       case 'Warrior':
@@ -107,7 +90,7 @@ export class Character {
   }
 
   getClassColorForWhiteBackground():string{
-    switch (this.class) {
+    switch (this.class.name) {
       case '':
         return '#D3D3D3';
       case 'Warrior':

@@ -28,12 +28,14 @@ describe('Character Class Specialization', () => {
   });
 
   it('should return undefined for active spec if not found', () => {
+    const expectedCharacterClassSpecialization = new CharacterClassSpecialization('undefined', '', true);
+
     const characterClass = new CharacterClass('name', [
       new CharacterClassSpecialization('Frost', 'DPS', false),
       new CharacterClassSpecialization('Unholy', 'DPS', false)
     ]);
 
-    expect(characterClass.getActiveSpec()).toBeUndefined();
+    expect(characterClass.getActiveSpec()).toEqual(expectedCharacterClassSpecialization);
   });
 
   it('should set active for specified specialization', () => {

@@ -29,9 +29,12 @@ export class RosterMainComponent {
   tierSlots:string[] = ['Head', 'Shoulder', 'Chest', 'Back', 'Hands', 'Legs'];
   activeTierSlots:string[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router ,private guildMemberSorter: GuildMemberSorter) {}
+  constructor(private route: ActivatedRoute, private router: Router ,private guildMemberSorter: GuildMemberSorter) {
+    console.log('constructor');
+  }
 
   ngOnInit() {
+    console.log('init');
     this.guild = this.guildMemberSorter.sortByRankDescending(this.route.snapshot.data['guild']);
     this.filterTierGroup(this.currentTierGroupFilter);
     this.filterTierSlot(this.currentSlotFilter)
