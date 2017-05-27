@@ -8,4 +8,10 @@ export class CharacterClass {
   getActiveSpec():CharacterClassSpecialization{
     return this.classSpecs.find(spec => {return spec.active})
   }
+
+  setActiveSpec(specialization:string){
+      this.classSpecs.forEach(spec => {
+        spec.active = spec.name === specialization;
+      });
+  }
 }

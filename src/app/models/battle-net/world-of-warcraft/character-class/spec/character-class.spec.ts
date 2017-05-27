@@ -36,5 +36,52 @@ describe('Character Class Specialization', () => {
     expect(characterClass.getActiveSpec()).toBeUndefined();
   });
 
+  it('should set active for specified specialization', () => {
+    const expectedActiveCharacterClassSpecialization = new CharacterClassSpecialization('Frost', 'DPS', false);
+    const otherCharacterClassSpecialization = new CharacterClassSpecialization('Unholy', 'DPS', false);
+
+    const characterClass = new CharacterClass('name', [
+      expectedActiveCharacterClassSpecialization,
+      otherCharacterClassSpecialization
+    ]);
+
+    characterClass.setActiveSpec('Frost');
+
+    expect(characterClass.getActiveSpec()).toEqual(expectedActiveCharacterClassSpecialization);
+    expect(expectedActiveCharacterClassSpecialization.active).toBeTruthy();
+    expect(otherCharacterClassSpecialization.active).toBeFalsy();
+  });
+
+  it('should set active to false for other specializations expect for specified specialization', () => {
+    const expectedActiveCharacterClassSpecialization = new CharacterClassSpecialization('Frost', 'DPS', false);
+    const otherCharacterClassSpecialization = new CharacterClassSpecialization('Unholy', 'DPS', true);
+
+    const characterClass = new CharacterClass('name', [
+      expectedActiveCharacterClassSpecialization,
+      otherCharacterClassSpecialization
+    ]);
+
+    characterClass.setActiveSpec('Frost');
+
+    expect(characterClass.getActiveSpec()).toEqual(expectedActiveCharacterClassSpecialization);
+    expect(expectedActiveCharacterClassSpecialization.active).toBeTruthy();
+    expect(otherCharacterClassSpecialization.active).toBeFalsy();
+  });
+
+  it('should gracefully handle not finding a matching specialization', () => {
+    const expectedActiveCharacterClassSpecialization = new CharacterClassSpecialization('Frost', 'DPS', false);
+    const otherCharacterClassSpecialization = new CharacterClassSpecialization('Unholy', 'DPS', false);
+
+    const characterClass = new CharacterClass('name', [
+      expectedActiveCharacterClassSpecialization,
+      otherCharacterClassSpecialization
+    ]);
+
+    characterClass.setActiveSpec('Arcane');
+
+    expect(expectedActiveCharacterClassSpecialization.active).toBeFalsy();
+    expect(otherCharacterClassSpecialization.active).toBeFalsy();
+  });
+
 
 });
