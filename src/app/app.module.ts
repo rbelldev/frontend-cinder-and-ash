@@ -28,6 +28,7 @@ import { ApplyFormComponent } from './components/apply/apply-form.component';
 import { RecruitmentFormComponent } from './components/apply/recruitment-form/recruitment-form.component';
 import {CharacterRecruitmentResolver} from "./resolvers/character-recruitment.resolver";
 import {CinderAndAshService} from "./services/cinder-and-ash/cinder-and-ash.service";
+import {RaidLogSorter} from "./services/warcraft-logs/raid-log-sorter";
 
 const appRoutes: Routes = [
   {
@@ -109,7 +110,8 @@ const appRoutes: Routes = [
     LogResolver,
     CharacterResolver,
     CharacterRecruitmentResolver,
-    CinderAndAshService
+    CinderAndAshService,
+    RaidLogSorter
   ],
   bootstrap: [AppComponent]
 })
