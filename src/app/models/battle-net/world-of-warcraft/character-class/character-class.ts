@@ -2,7 +2,8 @@ import {CharacterClassSpecialization} from "./character-class-specialization";
 export class CharacterClass {
   constructor(
     public name:string,
-    public classSpecs:CharacterClassSpecialization[]
+    public classSpecs:CharacterClassSpecialization[],
+    public color:string
   ){}
 
   getActiveSpec():CharacterClassSpecialization{

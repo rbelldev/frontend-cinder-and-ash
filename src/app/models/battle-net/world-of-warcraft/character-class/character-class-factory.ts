@@ -14,22 +14,6 @@ import {DemonHunter} from "./character-classes/demon-hunter";
 
 export class CharacterClassFactory {
 
-  private static classObjectOrder: CharacterClass[] = [
-    null,
-    new Warrior(),
-    new Paladin(),
-    new Hunter(),
-    new Rogue(),
-    new Priest(),
-    new DeathKnight(),
-    new Shaman(),
-    new Mage(),
-    new Warlock(),
-    new Monk(),
-    new Druid(),
-    new DemonHunter()
-  ];
-
   public static buildClass(classIndex:number):CharacterClass{
     switch (classIndex) {
       case 0:

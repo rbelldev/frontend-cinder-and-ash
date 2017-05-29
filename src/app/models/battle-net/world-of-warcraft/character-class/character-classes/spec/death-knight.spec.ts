@@ -8,6 +8,10 @@ describe('Death Knight', () => {
     expect(deathKnight.name).toEqual('Death Knight')
   });
 
+  it('should have the correct class color', () => {
+    expect(deathKnight.color).toEqual('#C41F3B')
+  });
+
   describe('Class Specs', () => {
 
     it('Should have 3 class specs', () => {

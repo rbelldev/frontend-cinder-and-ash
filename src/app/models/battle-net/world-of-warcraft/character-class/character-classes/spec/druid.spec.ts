@@ -8,6 +8,10 @@ describe('Druid', () => {
     expect(druid.name).toEqual('Druid')
   });
 
+  it('should have the correct class color', () => {
+    expect(druid.color).toEqual('#FF7D0A')
+  });
+
   describe('Class Specs', () => {
 
     it('Should have 4 class specs', () => {

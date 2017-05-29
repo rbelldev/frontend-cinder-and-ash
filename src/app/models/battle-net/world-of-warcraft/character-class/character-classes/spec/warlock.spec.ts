@@ -9,6 +9,10 @@ describe('Warlock', () => {
     expect(warlock.name).toEqual('Warlock')
   });
 
+  it('should have the correct class color', () => {
+    expect(warlock.color).toEqual('#9482C9')
+  });
+
   describe('Class Specs', () => {
 
     it('Should have 3 class specs', () => {

@@ -7,6 +7,10 @@ describe('Paladin', () => {
     expect(paladin.name).toEqual('Paladin')
   });
 
+  it('should have the correct class color', () => {
+    expect(paladin.color).toEqual('#F58CBA')
+  });
+
   describe('Class Specs', () => {
 
     it('Should have 3 class specs', () => {

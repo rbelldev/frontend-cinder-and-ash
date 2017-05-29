@@ -8,6 +8,10 @@ describe('Hunter', () => {
     expect(hunter.name).toEqual('Hunter')
   });
 
+  it('should have the correct class color', () => {
+    expect(hunter.color).toEqual('#ABD473')
+  });
+
   describe('Class Specs', () => {
 
     it('Should have 3 class specs', () => {

@@ -8,6 +8,10 @@ describe('Mage', () => {
     expect(mage.name).toEqual('Mage')
   });
 
+  it('should have the correct class color', () => {
+    expect(mage.color).toEqual('#69CCF0')
+  });
+
   describe('Class Specs', () => {
 
     it('Should have 3 class specs', () => {

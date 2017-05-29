@@ -9,6 +9,10 @@ describe('Shaman', () => {
     expect(shaman.name).toEqual('Shaman')
   });
 
+  it('should have the correct class color', () => {
+    expect(shaman.color).toEqual('#0070DE')
+  });
+
   describe('Class Specs', () => {
 
     it('Should have 3 class specs', () => {
