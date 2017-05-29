@@ -25,7 +25,7 @@
         <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.name}}</td>
         <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.characterClass.getActiveSpec().name}} {{guildMember.character.characterClass.name}}</td>
 
-        <td *ngFor="let tierSlot of tierSlots">
+        <td *ngFor="let tierSlot of tierSlots" align="center">
           <a *ngIf="guildMember.character.tierAssessment.hasPiece(tierSlot.toLowerCase())" href="http://www.wowhead.com/item={{guildMember.character.equippedItems[tierSlot.toLowerCase()].id}}"
              rel='{{generateRelBonusForWowhead(guildMember.character.equippedItems[tierSlot.toLowerCase()])}}'
              class="q{{guildMember.character.equippedItems[tierSlot.toLowerCase()].quality}}">{{guildMember.character.equippedItems[tierSlot.toLowerCase()].itemLevel}}</a>
