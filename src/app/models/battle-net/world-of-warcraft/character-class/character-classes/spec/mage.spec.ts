@@ -3,13 +3,18 @@ import {Mage} from "../mage";
 describe('Mage', () => {
 
   let mage = new Mage();
+  const classColor = '#69CCF0';
 
   it('should have the correct class name', () => {
     expect(mage.name).toEqual('Mage')
   });
 
   it('should have the correct class color', () => {
-    expect(mage.color).toEqual('#69CCF0')
+    expect(mage.color).toEqual(classColor)
+  });
+
+  it('should have the correct alternative class color', () => {
+    expect(mage.altColor).toEqual(classColor)
   });
 
   describe('Class Specs', () => {

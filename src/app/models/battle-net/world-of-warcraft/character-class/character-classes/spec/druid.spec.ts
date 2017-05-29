@@ -3,13 +3,18 @@ import {Druid} from "../druid";
 describe('Druid', () => {
 
   let druid = new Druid();
+  const classColor = '#FF7D0A';
 
   it('should have the correct class name', () => {
     expect(druid.name).toEqual('Druid')
   });
 
   it('should have the correct class color', () => {
-    expect(druid.color).toEqual('#FF7D0A')
+    expect(druid.color).toEqual(classColor)
+  });
+
+  it('should have the correct alternative class color', () => {
+    expect(druid.altColor).toEqual(classColor)
   });
 
   describe('Class Specs', () => {

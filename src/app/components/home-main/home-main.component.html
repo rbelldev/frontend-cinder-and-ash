@@ -6,45 +6,44 @@
     Horde - Mal'ganis
   </div>
 
-  <div class="row">
 
+  <div class="row">
     <div class="col-md-6">
 
-      <div class="alert alert-warning">
-        <h4>Rated Battlegrounds!</h4>
-        <p>Vote on Facebook for the New PvP Night!</p>
+      <h2 style="margin-bottom: 20px">News</h2>
+
+      <div class="col-md-12">
+
+        <div class="alert alert-danger">
+          <h4>Rated Battlegrounds Returns!</h4>
+          <p>Monday Nights @ 7PM ST Starting June 5th!</p>
+        </div>
+
+      </div>
+
+      <div class="col-md-12">
+
+        <div class="alert alert-info">
+          <h4>Mythic Roster</h4>
+          <p>Mythic Roster has been posted <a href="/roster">here</a> and is subject to change.</p>
+        </div>
+
       </div>
 
     </div>
 
     <div class="col-md-6">
 
-      <div class="alert alert-info">
-        <h4>Mythic Roster</h4>
-        <p>Mythic Roster has been posted <a href="/roster">here</a> and is subject to change.</p>
-        <p>Tier Tracking incoming shortly!</p>
+      <h2 style="margin-bottom: 20px">Mythic Nighthold Videos</h2>
+
+      <div class="col-md-8">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let video of raidVideos" (click)="navigateToRaidVideo(video.id)">
+            {{video.bossName}}
+          </li>
+        </ul>
       </div>
-
     </div>
-
-  </div>
-
-  <h2>Mythic Nighthold Videos</h2>
-
-  <div class="row">
-
-    <div class="col-md-4">
-
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let video of raidVideos" (click)="navigateToRaidVideo(video.id)">
-          {{video.bossName}}
-        </li>
-      </ul>
-
-    </div>
-
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
 
   </div>
 

@@ -3,13 +3,18 @@ import {DemonHunter} from "../demon-hunter";
 describe('Demon Hunter', () => {
 
   let demonHunter = new DemonHunter();
+  const classColor = '#A330C9';
 
   it('should have the correct class name', () => {
     expect(demonHunter.name).toEqual('Demon Hunter')
   });
 
   it('should have the correct class color', () => {
-    expect(demonHunter.color).toEqual('#A330C9')
+    expect(demonHunter.color).toEqual(classColor)
+  });
+
+  it('should have the correct alternative class color', () => {
+    expect(demonHunter.altColor).toEqual(classColor)
   });
 
   describe('Class Specs', () => {

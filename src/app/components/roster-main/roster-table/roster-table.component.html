@@ -14,7 +14,7 @@
 
     <tbody>
     <tr *ngFor="let guildMember of memberList" style="cursor: hand"
-        [ngStyle]="{'color': guildMember.character.getClassColor()}" (click)="navigateToCharacterDetails(guildMember.character.name)">
+        [ngStyle]="{'color': guildMember.character.class.color}" (click)="navigateToCharacterDetails(guildMember.character.name)">
         <!--class="{{guildMember.class.name}}"-->
       <td>{{guildMember.guildRank.rankName}}</td>
       <td>{{guildMember.character.name}}</td>

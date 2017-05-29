@@ -1,16 +1,20 @@
 import {Warlock} from "../Warlock";
 
 describe('Warlock', () => {
-describe('Warlock', () => {
 
   let warlock = new Warlock();
+  const classColor = '#9482C9';
 
   it('should have the correct class name', () => {
     expect(warlock.name).toEqual('Warlock')
   });
 
   it('should have the correct class color', () => {
-    expect(warlock.color).toEqual('#9482C9')
+    expect(warlock.color).toEqual(classColor)
+  });
+
+  it('should have the correct alternative class color', () => {
+    expect(warlock.altColor).toEqual(classColor)
   });
 
   describe('Class Specs', () => {

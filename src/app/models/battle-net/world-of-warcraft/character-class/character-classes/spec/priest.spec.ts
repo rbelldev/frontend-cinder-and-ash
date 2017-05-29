@@ -3,13 +3,19 @@ import {Priest} from "../priest";
 describe('Priest', () => {
 
   let priest = new Priest();
+  const classColor = '#FFFFFF';
+  const altClassColor = '#000000';
 
   it('should have the correct class name', () => {
     expect(priest.name).toEqual('Priest')
   });
 
   it('should have the correct class color', () => {
-    expect(priest.color).toEqual('#FFFFFF')
+    expect(priest.color).toEqual(classColor)
+  });
+
+  it('should have the correct alternative class color', () => {
+    expect(priest.altColor).toEqual(altClassColor)
   });
 
   describe('Class Specs', () => {

@@ -18,7 +18,7 @@
     <tbody>
 
       <tr *ngFor="let guildMember of memberList" style="cursor: hand"
-          [ngStyle]="{'color': guildMember.character.getClassColor()}">
+          [ngStyle]="{'color': guildMember.character.class.color}">
           <!--class="{{guildMember.character.class.name}}"-->
 
         <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.equippedItems.averageItemLevelEquipped}}</td>

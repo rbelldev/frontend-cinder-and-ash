@@ -2,13 +2,18 @@ import {Paladin} from "../paladin";
 describe('Paladin', () => {
 
   let paladin = new Paladin();
+  const classColor = '#F58CBA';
 
   it('should have the correct class name', () => {
     expect(paladin.name).toEqual('Paladin')
   });
 
   it('should have the correct class color', () => {
-    expect(paladin.color).toEqual('#F58CBA')
+    expect(paladin.color).toEqual(classColor)
+  });
+
+  it('should have the correct alternative class color', () => {
+    expect(paladin.altColor).toEqual(classColor)
   });
 
   describe('Class Specs', () => {

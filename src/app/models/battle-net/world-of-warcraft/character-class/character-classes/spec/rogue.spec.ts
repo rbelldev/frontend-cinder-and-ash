@@ -3,13 +3,18 @@ import {Rogue} from "../rogue";
 describe('Rogue', () => {
 
   let rouge = new Rogue();
+  const classColor = '#FFF569';
 
   it('should have the correct class name', () => {
     expect(rouge.name).toEqual('Rogue')
   });
 
   it('should have the correct class color', () => {
-    expect(rouge.color).toEqual('#FFF569')
+    expect(rouge.color).toEqual(classColor)
+  });
+
+  it('should have the correct alternative class color', () => {
+    expect(rouge.altColor).toEqual(classColor)
   });
 
   describe('Class Specs', () => {

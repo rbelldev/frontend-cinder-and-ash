@@ -3,13 +3,18 @@ import {DeathKnight} from "../death-knight";
 describe('Death Knight', () => {
 
   let deathKnight = new DeathKnight();
+  const classColor = '#C41F3B';
 
   it('should have the correct class name', () => {
     expect(deathKnight.name).toEqual('Death Knight')
   });
 
   it('should have the correct class color', () => {
-    expect(deathKnight.color).toEqual('#C41F3B')
+    expect(deathKnight.color).toEqual(classColor)
+  });
+
+  it('should have the correct alternative class color', () => {
+    expect(deathKnight.altColor).toEqual(classColor)
   });
 
   describe('Class Specs', () => {

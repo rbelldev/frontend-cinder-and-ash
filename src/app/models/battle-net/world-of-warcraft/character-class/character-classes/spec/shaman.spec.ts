@@ -1,16 +1,20 @@
-import {DeathKnight} from "../death-knight";
 import {Shaman} from "../shaman";
 
 describe('Shaman', () => {
 
   let shaman = new Shaman();
+  const classColor = '#0070DE';
 
   it('should have the correct class name', () => {
     expect(shaman.name).toEqual('Shaman')
   });
 
   it('should have the correct class color', () => {
-    expect(shaman.color).toEqual('#0070DE')
+    expect(shaman.color).toEqual(classColor)
+  });
+
+  it('should have the correct alternative class color', () => {
+    expect(shaman.altColor).toEqual(classColor)
   });
 
   describe('Class Specs', () => {
