@@ -7,13 +7,13 @@ export class TierAssessment {
   constructor(private character:Character){}
 
   hasPiece(slotName:string):boolean{
-    const tierName = this.classToTierNameMap[this.character.class.name];
+    const tierName = this.classToTierNameMap[this.character.characterClass.name];
     const equippedItemInSlot = this.character.equippedItems[slotName];
     return equippedItemInSlot.name.indexOf(tierName) >= 0 || equippedItemInSlot.itemLevel == 940;
   }
 
   getTierGroup():string{
-    return this.classToTierGroupMap[this.character.class.name];
+    return this.classToTierGroupMap[this.character.characterClass.name];
   }
 
   classToTierNameMap = {

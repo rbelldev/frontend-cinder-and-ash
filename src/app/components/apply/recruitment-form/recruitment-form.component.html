@@ -6,20 +6,20 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Core Raid Nights</h3>
+        <h3 class="panel-title">Mythic Core Raid Nights</h3>
       </div>
       <div class="panel-body">
-        <p>Thursday: 8:00 PM - 11:00 PM (EST)</p>
-        <p>Friday: 8:00 PM - 11:00 PM (EST)</p>
+        <p>Thursday: 7:00 PM - 10:00 PM (ST)</p>
+        <p>Friday: 7:00 PM - 10:00 PM (ST)</p>
       </div>
     </div>
 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Optional Farm Night</h3>
+        <h3 class="panel-title">Optional Heroic Farm Night</h3>
       </div>
       <div class="panel-body">
-        <p>Saturday: 8:00 PM - 11:00 PM (EST)</p>
+        <p>Wednesday: 7:00 PM - 10:00 PM (ST)</p>
       </div>
     </div>
 
@@ -28,17 +28,16 @@
         <h3 class="panel-title">Optional Rated Battle Grounds Night</h3>
       </div>
       <div class="panel-body">
-        <p>Wednesday: 8:00 PM - 11:00 PM (EST)</p>
+        <p>Monday: 7:00 PM - 10:00 PM (ST)</p>
       </div>
     </div>
-
   </div>
 
   <form [formGroup]="recruitmentForm" (ngSubmit)="submitForm(recruitmentForm.value)" style="padding-top: 20px"
         class="col-md-6 col-md-pull-6">
-    <h2 [ngStyle]="{'color': character.getClassColorForWhiteBackground()}">{{character.name}}</h2>
-    <h3 [ngStyle]="{'color': character.getClassColorForWhiteBackground()}">{{character.talents.className}}
-      {{character.class.name}}</h3>
+    <h2 [ngStyle]="{'color': character.characterClass.color}">{{character.name}}</h2>
+    <h3 [ngStyle]="{'color': character.characterClass.color}">{{character.talents.className}}
+      {{character.characterClass.name}}</h3>
     <!--#region Is Main Character -->
     <div class="form-group">
       <label>Is {{character.name}} your Main Character?</label>

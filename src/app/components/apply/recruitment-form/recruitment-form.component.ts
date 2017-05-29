@@ -28,7 +28,7 @@ export class RecruitmentFormComponent implements OnInit {
     this.recruitmentForm.controls['mainSpec'].setValue(this.character.talents.className);
     this.recruitmentForm.controls['realm'].setValue(this.character.realm || "unknown");
     this.recruitmentForm.controls['name'].setValue(this.character.name);
-    this.recruitmentForm.controls['characterClass'].setValue(this.character.class);
+    this.recruitmentForm.controls['characterClass'].setValue(this.character.characterClass);
   }
 
   submitForm(value: any) {
