@@ -78,7 +78,7 @@ export class Guild {
   mythicTanks: string[] = ['Embersong', 'Graybrew'];
   mythicHeals: string[] = ['Cattìbrie', 'Kÿra', 'Elderwulf', 'Kenlòre'];
   mythicRanged: string[] = ['Hezbolah', 'Gingerbrows', 'Revërie', 'Calissta', 'Halapeño', 'Supplicant', 'Lepickle'];
-  mythicMelee: string[] = ['Dasan', 'Knutè', 'Kirelion', 'Sçythér', 'Supbae', 'Djeckt', 'Bigdoss', 'Twinslayerz'];
+  mythicMelee: string[] = ['Knutè', 'Kirelion', 'Sçythér', 'Supbae', 'Djeckt', 'Bigdoss', 'Twinslayerz'];
   mythicTrials: string[] = ['Krnofex', 'Fredthemage', 'Ravenoth'];
 
 }
