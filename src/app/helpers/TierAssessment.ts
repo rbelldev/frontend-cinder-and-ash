@@ -4,25 +4,31 @@ import {Character} from "../models/battle-net/world-of-warcraft/character";
  */
 export class TierAssessment {
 
-  constructor(private character:Character){}
-
-  hasPiece(slotName:string):boolean{
-    const tierName = this.classToTierNameMap[this.character.characterClass.name];
-    const equippedItemInSlot = this.character.equippedItems[slotName];
-    return equippedItemInSlot.name.indexOf(tierName) >= 0 || equippedItemInSlot.itemLevel == 940;
+  constructor(private character: Character) {
   }
 
-  needsBis(slotName:string):boolean{
+  hasPiece(slotName: string): boolean {
+    const tierName = this.classToTierNameMap[this.character.characterClass.name];
+    const equippedItemInSlot = this.character.equippedItems[slotName];
+    return equippedItemInSlot.name.indexOf(tierName) >= 0;
+  }
+
+  hasLeggo(slotName: string): boolean {
+    const equippedItemInSlot = this.character.equippedItems[slotName];
+    return equippedItemInSlot.itemLevel == 940 || equippedItemInSlot.itemLevel == 970;
+  }
+
+  needsBis(slotName: string): boolean {
     const characterBisList = this.characterToBis[this.character.name.toLowerCase()];
 
-    if(characterBisList){
+    if (characterBisList) {
       return characterBisList[slotName] == 'BIS';
     }
 
     return false;
   }
 
-  getTierGroup():string{
+  getTierGroup(): string {
     return this.classToTierGroupMap[this.character.characterClass.name];
   }
 
@@ -209,35 +215,34 @@ export class TierAssessment {
   // 'Head', 'Shoulder', 'Chest', 'Back', 'Hands', 'Legs'
 
   classToTierNameMap = {
-    'Warrior':'Titanic Onslaught',
-    'Paladin':'Radiant Lightbringer',
-    'Hunter':'Wildstalker',
-    'Rogue':'Fanged Slayer\'s',
-    'Priest':'Blind Absolution',
-    'Death Knight':'Gravewarden',
-    'Shaman':'Skybreaker',
-    'Mage':'Arcane Tempest',
-    'Warlock':'Diabolic',
-    'Monk':'Xuen\'s',
-    'Druid':'Stormheart',
-    'Demon Hunter':'Demonbane'
+    'Warrior': 'Titanic Onslaught',
+    'Paladin': 'Radiant Lightbringer',
+    'Hunter': 'Wildstalker',
+    'Rogue': 'Fanged Slayer\'s',
+    'Priest': 'Blind Absolution',
+    'Death Knight': 'Gravewarden',
+    'Shaman': 'Skybreaker',
+    'Mage': 'Arcane Tempest',
+    'Warlock': 'Diabolic',
+    'Monk': 'Xuen\'s',
+    'Druid': 'Stormheart',
+    'Demon Hunter': 'Demonbane'
   };
 
   classToTierGroupMap = {
-    'Warrior':'Protector',
-    'Paladin':'Conqueror',
-    'Hunter':'Protector',
-    'Rogue':'Vanquisher',
-    'Priest':'Conqueror',
-    'Death Knight':'Vanquisher',
-    'Shaman':'Protector',
-    'Mage':'Vanquisher',
-    'Warlock':'Conqueror',
-    'Monk':'Protector',
-    'Druid':'Vanquisher',
-    'Demon Hunter':'Conqueror'
+    'Warrior': 'Protector',
+    'Paladin': 'Conqueror',
+    'Hunter': 'Protector',
+    'Rogue': 'Vanquisher',
+    'Priest': 'Conqueror',
+    'Death Knight': 'Vanquisher',
+    'Shaman': 'Protector',
+    'Mage': 'Vanquisher',
+    'Warlock': 'Conqueror',
+    'Monk': 'Protector',
+    'Druid': 'Vanquisher',
+    'Demon Hunter': 'Conqueror'
   }
-
 
 
 }

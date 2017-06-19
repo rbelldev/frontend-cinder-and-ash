@@ -30,6 +30,10 @@
              rel='{{generateRelBonusForWowhead(guildMember.character.equippedItems[tierSlot.toLowerCase()])}}'
              class="q{{guildMember.character.equippedItems[tierSlot.toLowerCase()].quality}}">{{guildMember.character.equippedItems[tierSlot.toLowerCase()].itemLevel}}</a>
 
+          <a *ngIf="!guildMember.character.tierAssessment.hasPiece(tierSlot.toLowerCase()) && guildMember.character.tierAssessment.hasLeggo(tierSlot.toLowerCase())" href="http://www.wowhead.com/item={{guildMember.character.equippedItems[tierSlot.toLowerCase()].id}}"
+             rel='{{generateRelBonusForWowhead(guildMember.character.equippedItems[tierSlot.toLowerCase()])}}'
+             class="q{{guildMember.character.equippedItems[tierSlot.toLowerCase()].quality}}">{{guildMember.character.equippedItems[tierSlot.toLowerCase()].itemLevel}}</a>
+
           <a *ngIf="!guildMember.character.tierAssessment.hasPiece(tierSlot.toLowerCase())
           && guildMember.character.tierAssessment.needsBis(tierSlot.toLowerCase())"
              style="border: solid 5px purple">BiS</a>
