@@ -48,8 +48,10 @@
   </div>
 
   <div id="{{video.id}}" *ngFor="let video of raidVideos">
-    <h3>{{video.bossName}}</h3>
-    <div class="embed-responsive embed-responsive-16by9">
+    <h2>{{video.bossName}}</h2>
+    <h3><a [href]="video.wowheadLink">Wowhead Guide</a></h3>
+    <h5 *ngIf="video.youtubeUrl && video.ptr">*PTR Footage</h5>
+    <div *ngIf="video.youtubeUrl" class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" width="560" height="315" [src]="video.youtubeUrl | safe"
               frameborder="0" allowfullscreen></iframe>
     </div>
