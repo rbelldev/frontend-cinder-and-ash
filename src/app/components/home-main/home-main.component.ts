@@ -34,6 +34,7 @@ export class HomeMainComponent {
     {
       id: "mistress-sasszine",
       bossName: "Mistress Sassz'ine",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}r31-jWqLOPw`,
       wowheadLink: `${this.wowheadLinkBaseUrl}mistress-sasszine-tomb-of-sargeras-raid-strategy-guide`,
       ptr:true
     },
