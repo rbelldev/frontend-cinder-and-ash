@@ -195,6 +195,15 @@ export class TierAssessment {
       'hands': 'OFF',
       'legs': 'BIS'
     },
+
+    'kirelion': {
+      'head': 'BIS',
+      'shoulder': 'OFF',
+      'chest': 'OFF',
+      'back': 'BIS',
+      'hands': 'BIS',
+      'legs': 'BIS'
+    },
   };
 
   // 'Head', 'Shoulder', 'Chest', 'Back', 'Hands', 'Legs'
