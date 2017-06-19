@@ -45,6 +45,8 @@ export class BattleNetService {
             });
 
           httpArray.push(characterInfo);
+
+          this.sleep(100);
         }
 
         return Observable.forkJoin(httpArray).map(res => {
@@ -76,4 +78,13 @@ export class BattleNetService {
         return character
       });
   }
+
+  sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
 }
