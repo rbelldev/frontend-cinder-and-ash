@@ -45,6 +45,12 @@ export class HomeMainComponent {
       ptr:true
     },
     {
+      id: "the-desolate-host",
+      bossName: "The Desolate Host",
+      wowheadLink: `${this.wowheadLinkBaseUrl}the-desolate-host-tomb-of-sargeras-raid-strategy-guide`,
+      ptr:true
+    },
+    {
       id: "maiden-of-vigilance",
       bossName: "Maiden of Vigilance",
       youtubeUrl: `${this.youtubeEmbedBassUrl}f2va3KPFZHs`,
