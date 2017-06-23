@@ -4,6 +4,7 @@ import {Guild} from "../../models/battle-net/world-of-warcraft/guild";
 import {GuildMemberSorter} from "../../models/utilities/guild-member-sorter";
 import {Character} from "../../models/battle-net/world-of-warcraft/character";
 import {GuildMember} from "../../models/battle-net/world-of-warcraft/guild-member";
+import {BattleNetService} from "../../services/battle-net/battle-net.service";
 
 @Component({
   selector: 'roster-main',
@@ -13,6 +14,8 @@ import {GuildMember} from "../../models/battle-net/world-of-warcraft/guild-membe
 })
 
 export class RosterMainComponent {
+
+  isLoading:boolean = true;
 
   guild: Guild;
 
@@ -29,15 +32,15 @@ export class RosterMainComponent {
   tierSlots:string[] = ['Head', 'Shoulder', 'Chest', 'Back', 'Hands', 'Legs'];
   activeTierSlots:string[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router ,private guildMemberSorter: GuildMemberSorter) {
-    console.log('constructor');
-  }
+  constructor(private battleNetService: BattleNetService, private guildMemberSorter: GuildMemberSorter) {}
 
   ngOnInit() {
-    console.log('init');
-    this.guild = this.guildMemberSorter.sortByRankDescending(this.route.snapshot.data['guild']);
-    this.filterTierGroup(this.currentTierGroupFilter);
-    this.filterTierSlot(this.currentSlotFilter)
+    this.battleNetService.getGuildRoster().subscribe( guild => {
+      this.guild = this.guildMemberSorter.sortByRankDescending(guild);
+      this.isLoading = false;
+      this.filterTierGroup(this.currentTierGroupFilter);
+      this.filterTierSlot(this.currentSlotFilter)
+    });
   }
 
   filterTierGroup(tierGroup:string){

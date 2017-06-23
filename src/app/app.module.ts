@@ -29,6 +29,7 @@ import { RecruitmentFormComponent } from './components/apply/recruitment-form/re
 import {CharacterRecruitmentResolver} from "./resolvers/character-recruitment.resolver";
 import {CinderAndAshService} from "./services/cinder-and-ash/cinder-and-ash.service";
 import {RaidLogSorter} from "./services/warcraft-logs/raid-log-sorter";
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 const appRoutes: Routes = [
   {
@@ -42,10 +43,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'roster',
-    component: RosterMainComponent,
-    resolve: {
-      guild:GuildResolver
-    }
+    component: RosterMainComponent
   },
   {
     path: 'raid-logs',
@@ -93,7 +91,8 @@ const appRoutes: Routes = [
     RosterTableComponent,
     MythicRosterTableComponent,
     ApplyFormComponent,
-    RecruitmentFormComponent
+    RecruitmentFormComponent,
+    SpinnerComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
