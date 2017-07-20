@@ -13,63 +13,56 @@ export class HomeMainComponent {
     {
       id: "goroth",
       bossName: "Goroth",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}w04v2V8V7Y8`,
+      youtubeUrl: `${this.youtubeEmbedBassUrl}tojekfRoRZo`,
       wowheadLink: `${this.wowheadLinkBaseUrl}goroth-tomb-of-sargeras-raid-strategy-guide`,
-      ptr:true
     },
     {
       id: "demonic-inquisition",
       bossName: "Demonic Inquisition",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}7GB071_cQlA`,
+      youtubeUrl: `${this.youtubeEmbedBassUrl}VlReQe6usE4`,
       wowheadLink: `${this.wowheadLinkBaseUrl}demonic-inquisition-tomb-of-sargeras-raid-strategy-guide`,
-      ptr:true
     },
     {
       id: "harjatan",
       bossName: "Harjatan",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}unJeZoac0mw`,
+      youtubeUrl: `${this.youtubeEmbedBassUrl}YWh8Ehreyw4`,
       wowheadLink: `${this.wowheadLinkBaseUrl}harjatan-tomb-of-sargeras-raid-strategy-guide`,
-      ptr:true
     },
     {
       id: "mistress-sasszine",
       bossName: "Mistress Sassz'ine",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}r31-jWqLOPw`,
+      youtubeUrl: `${this.youtubeEmbedBassUrl}tZHqoHb5FUc`,
       wowheadLink: `${this.wowheadLinkBaseUrl}mistress-sasszine-tomb-of-sargeras-raid-strategy-guide`,
-      ptr:true
     },
     {
       id: "sisters-of-the-moon",
       bossName: "Sisters of the Moon",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}MDOltN4C6JI`,
       wowheadLink: `${this.wowheadLinkBaseUrl}sisters-of-the-moon-tomb-of-sargeras-raid-strategy-guide`,
-      ptr:true
     },
     {
       id: "the-desolate-host",
       bossName: "The Desolate Host",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}8kytyL11Yb4`,
       wowheadLink: `${this.wowheadLinkBaseUrl}the-desolate-host-tomb-of-sargeras-raid-strategy-guide`,
-      ptr:true
     },
     {
       id: "maiden-of-vigilance",
       bossName: "Maiden of Vigilance",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}f2va3KPFZHs`,
+      youtubeUrl: `${this.youtubeEmbedBassUrl}ReMMpkeSF9g`,
       wowheadLink: `${this.wowheadLinkBaseUrl}maiden-of-vigilance-tomb-of-sargeras-raid-strategy-guide`,
-      ptr:true
     },
     {
       id: "fallen-avatar",
       bossName: "Fallen Avatar",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}_h9jW41xeHw`,
+      youtubeUrl: `${this.youtubeEmbedBassUrl}dKxly3cyrTs`,
       wowheadLink: `${this.wowheadLinkBaseUrl}fallen-avatar-tomb-of-sargeras-raid-strategy-guide`,
-      ptr:true
     },
     {
       id: "kiljaeden",
       bossName: "Kil'Jaeden",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}GKL-wDCKwCk`,
+      youtubeUrl: `${this.youtubeEmbedBassUrl}Gr1pkCpIiYI`,
       wowheadLink: `${this.wowheadLinkBaseUrl}kiljaeden-tomb-of-sargeras-raid-strategy-guide`,
-      ptr:true
     },
   ]
 
