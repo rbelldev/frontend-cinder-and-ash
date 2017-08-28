@@ -76,7 +76,7 @@ export class Guild {
   guildMembers: GuildMember[] = [];
 
   mythicTanks: string[] = ['Embersong', 'Knutè'];
-  mythicHeals: string[] = ['Naminé', 'Iyin'];
+  mythicHeals: string[] = ['Naminé', 'Iyin', 'Synthoras'];
   mythicRanged: string[] = ['Broxalar', 'Gingerbrows', 'Revërie', 'Calissta', 'Fredthemage', 'Ravenoth', 'Buljii', 'Grayfeather', 'Halìax'];
   mythicMelee: string[] = ['Kirelion', 'Sçythér', 'Supbae', 'Djeckt', 'Bigdoss', 'Twinslayerz'];
   mythicTrials: string[] = ['Lavalash', 'Viciousvixen'];
