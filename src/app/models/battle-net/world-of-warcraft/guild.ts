@@ -39,6 +39,7 @@ export class Guild {
     mythicRoster = mythicRoster.concat(this.getMythicMelee());
     mythicRoster = mythicRoster.concat(this.getMythicRanged());
     mythicRoster = mythicRoster.concat(this.getMythicTrials());
+    mythicRoster = mythicRoster.concat(this.getMythicBench());
 
     return mythicRoster;
   }
@@ -63,6 +64,10 @@ export class Guild {
     return this.findMembers(this.mythicTrials)
   }
 
+  getMythicBench(): GuildMember[] {
+    return this.findMembers(this.mythicBench)
+  }
+
   findMembers(membersToFind: string[]): GuildMember[] {
     return this.guildMembers.filter(guildMember => membersToFind.indexOf(guildMember.character.name) > -1)
   }
@@ -77,8 +82,9 @@ export class Guild {
 
   mythicTanks: string[] = ['Embersong', 'Knutè'];
   mythicHeals: string[] = ['Naminé', 'Iyin', 'Synthoras'];
-  mythicRanged: string[] = ['Broxalar', 'Gingerbrows', 'Revërie', 'Calissta', 'Fredthemage', 'Ravenoth', 'Buljii', 'Grayfeather', 'Halìax'];
+  mythicRanged: string[] = ['Broxalar', 'Gingerbrows', 'Revërie', 'Calissta', 'Fredthemage', 'Buljii', 'Grayfeather', 'Halìax'];
   mythicMelee: string[] = ['Kirelion', 'Sçythér', 'Supbae', 'Djeckt', 'Bigdoss', 'Twinslayerz'];
-  mythicTrials: string[] = ['Lavalash', 'Viciousvixen'];
+  mythicTrials: string[] = ['Viciousvixen'];
+  mythicBench: string[] = ['Ravenoth', 'Lavalash'];
 
 }
