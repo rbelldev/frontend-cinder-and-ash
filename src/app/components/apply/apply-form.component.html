@@ -1,94 +1,96 @@
-<div class="col-md-6 col-md-push-6">
+<div class="container">
 
-  <h3>General Guild Info</h3>
+  <div class="col-md-6 col-md-push-6">
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Mythic Core Raid Nights</h3>
+    <h3>General Guild Info</h3>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Mythic Core Raid Nights</h3>
+      </div>
+      <div class="panel-body">
+        <p>Wednesday: 7:00 PM - 10:00 PM (ST)</p>
+        <p>Thursday: 7:00 PM - 10:00 PM (ST)</p>
+      </div>
     </div>
-    <div class="panel-body">
-      <p>Wednesday: 7:00 PM - 10:00 PM (ST)</p>
-      <p>Thursday: 7:00 PM - 10:00 PM (ST)</p>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Optional Heroic Farm Night</h3>
+      </div>
+      <div class="panel-body">
+        <p>Friday: 7:00 PM - 10:00 PM (ST)</p>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Optional Rated Battle Grounds and Arena Night</h3>
+      </div>
+      <div class="panel-body">
+        <p>TBD</p>
+        <!--<p>Monday: 7:00 PM - 10:00 PM (ST)</p>-->
+      </div>
     </div>
   </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Optional Heroic Farm Night</h3>
-    </div>
-    <div class="panel-body">
-      <!--<p>Wednesday: 7:00 PM - 10:00 PM (ST)</p>-->
-      <p>TBD</p>
-    </div>
-  </div>
+  <div class="col-md-6 col-md-pull-6">
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Optional Rated Battle Grounds and Arena Night</h3>
-    </div>
-    <div class="panel-body">
-      <p>TBD</p>
-      <!--<p>Monday: 7:00 PM - 10:00 PM (ST)</p>-->
-    </div>
-  </div>
-</div>
+    <h2>Apply Now!</h2>
+    <form [formGroup]="getStartedForm" (ngSubmit)="submitForm(getStartedForm.value)">
 
-<div class="col-md-6 col-md-pull-6">
-
-  <h2>Apply Now!</h2>
-  <form [formGroup]="getStartedForm" (ngSubmit)="submitForm(getStartedForm.value)">
-
-    <div class="alert alert-info">
-      Start by entering the <strong>REALM</strong> and <strong>NAME</strong> of the character that you wish to apply
-      with
-      and click <strong>"Get Started!"</strong> (US Only).
-    </div>
-
-    <div class="alert alert-warning" *ngIf="characterNotFound">
-      Your character was not found. Please make sure you have entered the correct information.
-    </div>
-
-    <div class="row">
-
-      <!--#region Realm  -->
-
-      <div class="form-group col-md-6"
-           [ngClass]="{'has-error':!getStartedForm.controls['realmName'].valid && getStartedForm.controls['realmName'].touched}">
-
-        <label>Realm Name:</label>
-        <input class="form-control" type="text" placeholder="Mal'Ganis"
-               [formControl]="getStartedForm.controls['realmName']">
-
-        <div
-          *ngIf="getStartedForm.controls['realmName'].hasError('required') && getStartedForm.controls['realmName'].touched"
-          class="alert alert-danger">You must include the realm name of which your character belongs.
-        </div>
+      <div class="alert alert-info">
+        Start by entering the <strong>REALM</strong> and <strong>NAME</strong> of the character that you wish to apply
+        with
+        and click <strong>"Get Started!"</strong> (US Only).
       </div>
 
-      <!--#endregion -->
-
-      <!--#region Character Name  -->
-
-      <div class="form-group col-md-6"
-           [ngClass]="{'has-error':!getStartedForm.controls['characterName'].valid && getStartedForm.controls['characterName'].touched}">
-
-        <label>Character Name:</label>
-        <input class="form-control" type="text" placeholder="Knute"
-               [formControl]="getStartedForm.controls['characterName']">
-
-        <div
-          *ngIf="getStartedForm.controls['characterName'].hasError('required') && getStartedForm.controls['characterName'].touched"
-          class="alert alert-danger">You must include your character name.
-        </div>
+      <div class="alert alert-warning" *ngIf="characterNotFound">
+        Your character was not found. Please make sure you have entered the correct information.
       </div>
 
-      <!--#endregion -->
+      <div class="row">
 
-    </div>
+        <!--#region Realm  -->
 
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary" [disabled]="!getStartedForm.valid">Get Started!</button>
-    </div>
+        <div class="form-group col-md-6"
+             [ngClass]="{'has-error':!getStartedForm.controls['realmName'].valid && getStartedForm.controls['realmName'].touched}">
 
-  </form>
+          <label>Realm Name:</label>
+          <input class="form-control" type="text" placeholder="Mal'Ganis"
+                 [formControl]="getStartedForm.controls['realmName']">
+
+          <div
+            *ngIf="getStartedForm.controls['realmName'].hasError('required') && getStartedForm.controls['realmName'].touched"
+            class="alert alert-danger">You must include the realm name of which your character belongs.
+          </div>
+        </div>
+
+        <!--#endregion -->
+
+        <!--#region Character Name  -->
+
+        <div class="form-group col-md-6"
+             [ngClass]="{'has-error':!getStartedForm.controls['characterName'].valid && getStartedForm.controls['characterName'].touched}">
+
+          <label>Character Name:</label>
+          <input class="form-control" type="text" placeholder="Knute"
+                 [formControl]="getStartedForm.controls['characterName']">
+
+          <div
+            *ngIf="getStartedForm.controls['characterName'].hasError('required') && getStartedForm.controls['characterName'].touched"
+            class="alert alert-danger">You must include your character name.
+          </div>
+        </div>
+
+        <!--#endregion -->
+
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="!getStartedForm.valid">Get Started!</button>
+      </div>
+
+    </form>
+  </div>
 </div>

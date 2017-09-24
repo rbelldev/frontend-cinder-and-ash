@@ -21,6 +21,7 @@ export class Character {
   tierAssessment:TierAssessment;
   progression:any;
   talents:Talents;
+  imageUrl:string;
 
   constructor(json: JSON) {
 
@@ -53,6 +54,9 @@ export class Character {
     }
 
     this.tierAssessment = new TierAssessment(this);
+
+    this.imageUrl = `https://render-us.worldofwarcraft.com/character/${json['thumbnail'].replace('avatar', 'main')}`;
+    console.log(this.imageUrl);
 
   }
 }

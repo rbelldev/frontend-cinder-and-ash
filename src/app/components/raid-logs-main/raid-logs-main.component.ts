@@ -11,11 +11,14 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class RaidLogsMainComponent implements OnInit{
 
   logResults: ReportMeta[];
+  latestLog: ReportMeta;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    this.logResults = this.route.snapshot.data['logResults'];
+    let allResults = this.route.snapshot.data['logResults'];
+    this.latestLog = allResults.shift();
+    this.logResults = allResults;
   }
 
   navigateToCheckMyWow(id:string){
