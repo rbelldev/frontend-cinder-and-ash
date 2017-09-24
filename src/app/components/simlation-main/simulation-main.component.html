@@ -1,151 +1,168 @@
 <div class="container">
 
-  <section id="simulation-basic" class="content-block">
-    <h2 class="title title--large">Simulations</h2>
-    <div class="text-block">
-      <p>Within the guild discord there is a <b>Simulations</b> text channel. Within it is a discord bot (named <i>SIMder-and-Ash-bot</i>)
-        that is running off of a server that Djeckt has. When this bot is online, you can use discord to sim your
-        character. Healing simulations are overall not supported by Simcraft, but DPS and even tanking is. Keep reading
-        to learn how to utilize this fully.</p>
-    </div>
-  </section>
+  <div class="well">
 
-
-  <section id="simulation-basic" class="content-block">
-    <h3 class="title title--large">Basic Scenarios</h3>
-    <div class="text-block">
-      <p>To have the bot run a sim on your character's current armory data (<i>note:this updates on logout</i>) type the
-        following command in the simulation channel: <br><code>!simc -c <b>[CHARACTER NAME]</b></code> <br>This will run
-        the simulation and give you a link the results. </p>
-      <p>The PAWN addon is very helpful in determining your stat prioritization for your character. It will help you
-        determine which piece of equipment will have the most positive effect on your damage output.
-      <p>To get your characters PAWN string for the addon, run the following command <br> <code>!simc -c [<b>CHARACTER
-        NAME</b>] -s yes</code> <br> This will take a longer time to execute, but in the link there should now be a Pawn
-        String field that looks something like this <br> <code>( Pawn: v1: "Djeckt": Class=Paladin, Spec=Retribution,
-          Strength=11.89, CritRating=11.40, HasteRating=9.75, MasteryRating=8.17, Versatility=11.93 )</code> <br> Copy
-        and use the Import fuction of the pawn addon in WoW to import it.</p>
-    </div>
-  </section>
-
-  <section id="simulation-bot-commands" class="content-block">
-    <h3 class="title title--large">Discord Sim Bot Commands</h3>
-    <div class="text-block">
-      <p>
-        <br>Help for simulation through Discord:
-        <br>Options:
-        <br>-c -character in-game name
-        <br>-r -realm realm name (Default is Magtheridon)
-        <br>-s -scale yes/no (Default is no)
-        <br>-d -data armory/addon (Default is armory)
-        <br>-f -fightstyle Choose between different fightstyles
-        <br>-a -aoe yes/no (Default is no)
-        <br>-v -version gives the version of simulationcraft being used
-
-        <br>● Simulate using armory with stat scaling:
-        <br><code>!simc -character NAME -scale yes</code>
-
-        <br>● Simulate using addon without stat scaling:
-        <br><code>!simc -character NAME -d addon</code>
-
-        <br>The bot will whisper asking for a paste of data string from the addon ingame. The last line should contain
-        DONE.
-        <br>Read the Advance Scenarios how to use the addon.
-      </p>
-    </div>
-
-    <section id="simulation-advanced" class="content-block">
-      <h3 class="title title--large">Advanced Scenarios</h3>
+    <section id="simulation-basic" class="content-block">
+      <h2 class="title title--large">Simulations</h2>
       <div class="text-block">
-        <p>The above usages are limited in that only use your characters Armory data, and sometimes you may want to
-          compare gear without logging out. This is actually very easy to do too. For starters, get the <a
-            href="https://mods.curse.com/addons/wow/simulationcraft">SimulationCraft addon</a>. Now whenver you run
-          "/simc" in WoW chat, a window will pop up with a bunch of text. This is your characters currently equipped
-          gear. If you equip something else and run the /simc command, the text will be updated with your new gear. </p>
-        <p>To use this text for your simulation, use the following command in the simulation channel: <br><code>!simc -c
-          <b>[CHARACTER NAME]</b> -d addon</code> <br>You will then receive a Discord message from the bot asking you
-          for the output. Paste all of that text as a response to the bot and add "DONE" to it. Then go back to the
-          simulation channel and your simulation should be running. </p>
-        <p>Please bear in mind that running pawn scaling is a lot more time and resource intesive than simple scaling,
-          so is best to only get scaling after equipping your final gear. </p>
+        <p>Within the guild discord there is a <b>Simulations</b> text channel. Within it is a discord bot (named <i>SIMder-and-Ash-bot</i>)
+          that is running off of a server that Djeckt has. When this bot is online, you can use discord to sim your
+          character. Healing simulations are overall not supported by Simcraft, but DPS and even tanking is. Keep
+          reading
+          to learn how to utilize this fully.</p>
       </div>
     </section>
 
-    <section id="simulation-whatif" class="content-block">
-      <h3 class="title title--large">Simulating for Unacquired Equipment </h3>
+
+    <section id="simulation-basic" class="content-block">
+      <h3 class="title title--large">Basic Scenarios</h3>
       <div class="text-block">
-        <p>It is actually possible to simulate for gear that you do not own yet. This is a bit more involed but is
-          easier than it seems. Follow the guide from Advanced Scenarios to get your full gear text. Then pull up the
-          wowhead page for the item you want to test, such as <a
-            href="http://www.wowhead.com/item=140806/convergence-of-fates&bonus=3514">Convergence of Fates</a>. Under
-          the item text there is an Item Versions link that you can hover over and select the exact ilvl you want to
-          try. Once that page loads up, over the "Quick Facts" section there is a Links button. Click that, and copy the
-          convenient SimulationCraft string and put that in place of whichever item you would be replacing. Keep in mind
-          that Wowhead always assumes that it will be the Slot 1 ring or trinket, so simply change the 1 to a 2 when you
-          paste it to the Simulation bot. </p>
+        <p>To have the bot run a sim on your character's current armory data (<i>note:this updates on logout</i>) type
+          the
+          following command in the simulation channel: <br><code>!simc -c <b>[CHARACTER NAME]</b></code> <br>This will
+          run
+          the simulation and give you a link the results. </p>
+        <p>The PAWN addon is very helpful in determining your stat prioritization for your character. It will help you
+          determine which piece of equipment will have the most positive effect on your damage output.
+        <p>To get your characters PAWN string for the addon, run the following command <br> <code>!simc -c [<b>CHARACTER
+          NAME</b>] -s yes</code> <br> This will take a longer time to execute, but in the link there should now be a
+          Pawn
+          String field that looks something like this <br> <code>( Pawn: v1: "Djeckt": Class=Paladin, Spec=Retribution,
+            Strength=11.89, CritRating=11.40, HasteRating=9.75, MasteryRating=8.17, Versatility=11.93 )</code> <br> Copy
+          and use the Import fuction of the pawn addon in WoW to import it.</p>
       </div>
     </section>
 
-    <section id="simulating-comparisons" class="content-block">
-      <h3 class="title title--large">Simulating Comparisons </h3>
+    <section id="simulation-bot-commands" class="content-block">
+      <h3 class="title title--large">Discord Sim Bot Commands</h3>
       <div class="text-block">
-        <p>Yet another very useful feature of Simcraft is to simulate multiple sets of gear at the same time to see
-          which combination is best. You can run a single sim to compare which 4 set pieces are the best, or which
-          talent combination offers the most, etc.</p>
-        <p>To do this, first you will need to get your current gear wall of text as the baseline and default. Paste this
-          into a text document somewhere and add a new line. Then add three (or more) lines depending on what you want
-          to do. Below is an example and that we will walk through.
-        <p><code>copy="Djeckt" <br>trinket1=eye_of_command,id=142167,bonus_id=3453/1472 <br>name=EyeSlot1 </code></p>
-        <p>What we are saying with this is that we want to COPY the data from the "Djeckt" run (you would replace this
-          with your character name), change the equipment of Trinket1 to be an Eye of Command (reference Simulation for
-          Unacquired Equipment for how to get this line) and lastly we want to name the result of this run "EyeSlot1".
-          <br> The result of this simulation will produce a chart that will have the baseline (Djeckt) and any
-          additional runs (EyeSlot1) sorted by DPS with their sim results. Add "DONE" to the end of all that text and
-          when running <code>!simc -c Djeckt -d addon</code> paste that to the bot. Below is an example of what I would
-          paste to the bot to compare whether the Eye of Command (that I didnt have at the time) is better in slot 1 or
-          slot 2 </p>
-        <p><code>Paladin="Djeckt"
-          <br>level=110
-          <br>race=tauren
-          <br>region=us
-          <br>server=malganis
-          <br>role=
-          <br>professions=herbalism=815/enchanting=145
-          <br>talents=1122212
-          <br>spec=retribution
-          <br>artifact=2:0:0:0:0:40:1:41:3:42:3:43:3:44:3:47:3:49:1:50:3:51:3:52:3:53:3:54:1:350:1:351:1:352:1:353:1:1118:11:1275:1
+        <p>
+          <br>Help for simulation through Discord:
+          <br>Options:
+          <br>-c -character in-game name
+          <br>-r -realm realm name (Default is Magtheridon)
+          <br>-s -scale yes/no (Default is no)
+          <br>-d -data armory/addon (Default is armory)
+          <br>-f -fightstyle Choose between different fightstyles
+          <br>-a -aoe yes/no (Default is no)
+          <br>-v -version gives the version of simulationcraft being used
 
-          <br>head=,id=134511,bonus_id=3414/1808/1522/3337,gem_id=130246
-          <br>neck=,id=132444,enchant_id=5439,bonus_id=3529/3530,gem_id=130220
-          <br>shoulder=,id=139233,enchant_id=5441,bonus_id=1805/1487
-          <br>back=,id=138369,enchant_id=5434,bonus_id=3514/1472/1813
-          <br>chest=,id=138350,bonus_id=3514/1477/3336
-          <br>wrist=,id=139235,bonus_id=1806/1507/3336
-          <br>hands=,id=137059,bonus_id=3458/3455
-          <br>waist=,id=144407,bonus_id=3443/1492/3337
-          <br>legs=,id=134271,bonus_id=3417/1537/3337
-          <br>feet=,id=140014
-          <br>finger1=,id=139236,enchant_id=5428,bonus_id=1805/1487
-          <br>finger2=,id=139238,enchant_id=5428,bonus_id=1805/1808/1492/3336,gem_id=130220
-          <br>trinket1=,id=140796,bonus_id=3514/1472/1813
-          <br>trinket2=,id=139328,bonus_id=1806/1502
-          <br>main_hand=,id=120978,bonus_id=737,relic_id=1805:1487/3514:1472:1813/3414:1512:3336,gem_id=139252/140837/136717/0
+          <br>● Simulate using armory with stat scaling:
+          <br><code>!simc -character NAME -scale yes</code>
 
-          <br>
-          <br>copy="Djeckt"
-          <br>trinket1=eye_of_command,id=142167,bonus_id=3453/1472
-          <br>name=EyeSlot1
+          <br>● Simulate using addon without stat scaling:
+          <br><code>!simc -character NAME -d addon</code>
 
-          <br>
-          <br>copy="Djeckt"
-          <br>trinket2=eye_of_command,id=142167,bonus_id=3453/1472
-          <br>name=EyeSlot2
-          <br>DONE
-        </code>
+          <br>The bot will whisper asking for a paste of data string from the addon ingame. The last line should contain
+          DONE.
+          <br>Read the Advance Scenarios how to use the addon.
         </p>
-
-        <p>If I wanted to see which of my first level talents sims the highest, I would change the "trinket1=" line for
-          <code>talents=2122212</code> and "trinket2=" for <code>talents=3122212</code></p>
       </div>
+
+      <section id="simulation-advanced" class="content-block">
+        <h3 class="title title--large">Advanced Scenarios</h3>
+        <div class="text-block">
+          <p>The above usages are limited in that only use your characters Armory data, and sometimes you may want to
+            compare gear without logging out. This is actually very easy to do too. For starters, get the <a
+              href="https://mods.curse.com/addons/wow/simulationcraft">SimulationCraft addon</a>. Now whenver you run
+            "/simc" in WoW chat, a window will pop up with a bunch of text. This is your characters currently equipped
+            gear. If you equip something else and run the /simc command, the text will be updated with your new gear.
+          </p>
+          <p>To use this text for your simulation, use the following command in the simulation channel: <br><code>!simc
+            -c
+            <b>[CHARACTER NAME]</b> -d addon</code> <br>You will then receive a Discord message from the bot asking you
+            for the output. Paste all of that text as a response to the bot and add "DONE" to it. Then go back to the
+            simulation channel and your simulation should be running. </p>
+          <p>Please bear in mind that running pawn scaling is a lot more time and resource intesive than simple scaling,
+            so is best to only get scaling after equipping your final gear. </p>
+        </div>
+      </section>
+
+      <section id="simulation-whatif" class="content-block">
+        <h3 class="title title--large">Simulating for Unacquired Equipment </h3>
+        <div class="text-block">
+          <p>It is actually possible to simulate for gear that you do not own yet. This is a bit more involed but is
+            easier than it seems. Follow the guide from Advanced Scenarios to get your full gear text. Then pull up the
+            wowhead page for the item you want to test, such as <a
+              href="http://www.wowhead.com/item=140806/convergence-of-fates&bonus=3514">Convergence of Fates</a>. Under
+            the item text there is an Item Versions link that you can hover over and select the exact ilvl you want to
+            try. Once that page loads up, over the "Quick Facts" section there is a Links button. Click that, and copy
+            the
+            convenient SimulationCraft string and put that in place of whichever item you would be replacing. Keep in
+            mind
+            that Wowhead always assumes that it will be the Slot 1 ring or trinket, so simply change the 1 to a 2 when
+            you
+            paste it to the Simulation bot. </p>
+        </div>
+      </section>
+
+      <section id="simulating-comparisons" class="content-block">
+        <h3 class="title title--large">Simulating Comparisons </h3>
+        <div class="text-block">
+          <p>Yet another very useful feature of Simcraft is to simulate multiple sets of gear at the same time to see
+            which combination is best. You can run a single sim to compare which 4 set pieces are the best, or which
+            talent combination offers the most, etc.</p>
+          <p>To do this, first you will need to get your current gear wall of text as the baseline and default. Paste
+            this
+            into a text document somewhere and add a new line. Then add three (or more) lines depending on what you want
+            to do. Below is an example and that we will walk through.
+          <p><code>copy="Djeckt" <br>trinket1=eye_of_command,id=142167,bonus_id=3453/1472 <br>name=EyeSlot1 </code></p>
+          <p>What we are saying with this is that we want to COPY the data from the "Djeckt" run (you would replace this
+            with your character name), change the equipment of Trinket1 to be an Eye of Command (reference Simulation
+            for
+            Unacquired Equipment for how to get this line) and lastly we want to name the result of this run "EyeSlot1".
+            <br> The result of this simulation will produce a chart that will have the baseline (Djeckt) and any
+            additional runs (EyeSlot1) sorted by DPS with their sim results. Add "DONE" to the end of all that text and
+            when running <code>!simc -c Djeckt -d addon</code> paste that to the bot. Below is an example of what I
+            would
+            paste to the bot to compare whether the Eye of Command (that I didnt have at the time) is better in slot 1
+            or
+            slot 2 </p>
+          <p><code>Paladin="Djeckt"
+            <br>level=110
+            <br>race=tauren
+            <br>region=us
+            <br>server=malganis
+            <br>role=
+            <br>professions=herbalism=815/enchanting=145
+            <br>talents=1122212
+            <br>spec=retribution
+            <br>artifact=2:0:0:0:0:40:1:41:3:42:3:43:3:44:3:47:3:49:1:50:3:51:3:52:3:53:3:54:1:350:1:351:1:352:1:353:1:1118:11:1275:1
+
+            <br>head=,id=134511,bonus_id=3414/1808/1522/3337,gem_id=130246
+            <br>neck=,id=132444,enchant_id=5439,bonus_id=3529/3530,gem_id=130220
+            <br>shoulder=,id=139233,enchant_id=5441,bonus_id=1805/1487
+            <br>back=,id=138369,enchant_id=5434,bonus_id=3514/1472/1813
+            <br>chest=,id=138350,bonus_id=3514/1477/3336
+            <br>wrist=,id=139235,bonus_id=1806/1507/3336
+            <br>hands=,id=137059,bonus_id=3458/3455
+            <br>waist=,id=144407,bonus_id=3443/1492/3337
+            <br>legs=,id=134271,bonus_id=3417/1537/3337
+            <br>feet=,id=140014
+            <br>finger1=,id=139236,enchant_id=5428,bonus_id=1805/1487
+            <br>finger2=,id=139238,enchant_id=5428,bonus_id=1805/1808/1492/3336,gem_id=130220
+            <br>trinket1=,id=140796,bonus_id=3514/1472/1813
+            <br>trinket2=,id=139328,bonus_id=1806/1502
+            <br>main_hand=,id=120978,bonus_id=737,relic_id=1805:1487/3514:1472:1813/3414:1512:3336,gem_id=139252/140837/136717/0
+
+            <br>
+            <br>copy="Djeckt"
+            <br>trinket1=eye_of_command,id=142167,bonus_id=3453/1472
+            <br>name=EyeSlot1
+
+            <br>
+            <br>copy="Djeckt"
+            <br>trinket2=eye_of_command,id=142167,bonus_id=3453/1472
+            <br>name=EyeSlot2
+            <br>DONE
+          </code>
+          </p>
+
+          <p>If I wanted to see which of my first level talents sims the highest, I would change the "trinket1=" line
+            for
+            <code>talents=2122212</code> and "trinket2=" for <code>talents=3122212</code></p>
+        </div>
+      </section>
     </section>
-  </section>
+  </div>
 </div>
