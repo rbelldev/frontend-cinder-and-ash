@@ -28,9 +28,11 @@ export class RosterMainComponent {
 
   currentTierGroupFilter: string = 'All';
   currentSlotFilter: string = 'All';
+  currentRaidFilter: string = 'Antorus, the Burning Throne';
 
   tierGroups:string[] = ['Conqueror', 'Protector', 'Vanquisher'];
   tierSlots:string[] = ['Head', 'Shoulder', 'Chest', 'Back', 'Hands', 'Legs'];
+  raids:string[] = ['Tomb of Sargeras', 'Antorus, the Burning Throne'];
   activeTierSlots:string[] = [];
 
   constructor(private battleNetService: BattleNetService, private guildMemberSorter: GuildMemberSorter) {}
@@ -78,6 +80,10 @@ export class RosterMainComponent {
     } else {
       this.activeTierSlots = [tierSlot];
     }
+  }
+
+  filterRaid(raid:string){
+    this.currentRaidFilter = raid;
   }
 
 }

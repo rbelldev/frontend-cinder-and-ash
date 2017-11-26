@@ -1,5 +1,5 @@
 <div class="container">
-  
+
   <div class="jumbotron">
     <h2>Roster</h2>
     <h4>Mythic Roster</h4>
@@ -62,30 +62,51 @@
             </ul>
 
           </div>
+
+          <div class="btn-group" style="padding-top: 1.25em">
+
+            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+              Raid: {{currentRaidFilter}} <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu">
+              <li (click)="filterRaid('All')"><a>All</a></li>
+              <li role="separator" class="divider"></li>
+              <li *ngFor="let raid of raids" (click)="filterRaid(raid)"><a>{{raid}}</a></li>
+            </ul>
+
+          </div>
         </div>
 
         <mythic-roster-table [memberList]="mythicTanks"
                              [label]="'Tanks'"
+                             [currentRaidFilter]="currentRaidFilter"
                              [tierSlots]="activeTierSlots"></mythic-roster-table>
 
         <mythic-roster-table [memberList]="mythicHeals"
                              [label]="'Heals'"
+                             [currentRaidFilter]="currentRaidFilter"
                              [tierSlots]="activeTierSlots"></mythic-roster-table>
 
         <mythic-roster-table [memberList]="mythicRanged"
                              [label]="'Ranged'"
+                             [currentRaidFilter]="currentRaidFilter"
                              [tierSlots]="activeTierSlots"></mythic-roster-table>
 
         <mythic-roster-table [memberList]="mythicMelee"
                              [label]="'Melee'"
+                             [currentRaidFilter]="currentRaidFilter"
                              [tierSlots]="activeTierSlots"></mythic-roster-table>
 
         <mythic-roster-table [memberList]="mythicBench"
                              [label]="'Bench'"
+                             [currentRaidFilter]="currentRaidFilter"
                              [tierSlots]="activeTierSlots"></mythic-roster-table>
 
         <mythic-roster-table [memberList]="mythicTrials"
                              [label]="'Trials'"
+                             [currentRaidFilter]="currentRaidFilter"
                              [tierSlots]="activeTierSlots"></mythic-roster-table>
 
       </div>

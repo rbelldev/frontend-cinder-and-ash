@@ -9,19 +9,22 @@
 
 
     <div class="row">
+      <h3 style="margin-bottom: 20px">News</h3>
       <div class="col-md-6">
-
-        <h3 style="margin-bottom: 20px">News</h3>
-
         <div class="col-md-12">
 
           <div class="alert alert-danger">
-            <h4>New Raid Times!</h4>
-            <p>Wednesday and Thursday Nights 7PM - 10PM</p>
+            <h4>REQUIRED Addons</h4>
+            <p>RC Loot Council (or you don't get loot!)</p>
+            <p>Deadly Boss Mods</p>
+            <p>Weak Auras</p>
+            <p>*Others might be added at officer discretion depending on need</p>
           </div>
 
         </div>
+      </div>
 
+      <div class="col-md-6">
         <div class="col-md-12">
 
           <div class="alert alert-info">
@@ -39,29 +42,14 @@
           </div>
 
         </div>
-
       </div>
-
-      <!--<div class="col-md-6">-->
-
-        <!--<h3 style="margin-bottom: 20px">Tomb of Sargeras Videos</h3>-->
-
-        <!--<div class="col-md-8">-->
-          <!--<ul class="list-group">-->
-            <!--<li class="list-group-item" *ngFor="let video of raidVideos" (click)="navigateToRaidVideo(video.id)">-->
-              <!--{{video.bossName}}-->
-            <!--</li>-->
-          <!--</ul>-->
-        <!--</div>-->
-      <!--</div>-->
-
     </div>
 
 
-    <h2 style="margin-bottom: 20px">Tomb of Sargeras Videos</h2>
+    <h2 style="margin-bottom: 20px">Antorus, the Burning Throne Videos</h2>
     <div id="{{video.id}}" *ngFor="let video of raidVideos">
       <h3>{{video.bossName}}</h3>
-      <h4><a [href]="video.wowheadLink">Wowhead Guide</a></h4>
+      <h4 *ngIf="video.wowheadLink"><a [href]="video.wowheadLink">Wowhead Guide</a></h4>
       <h5 *ngIf="video.youtubeUrl && video.ptr">*PTR Footage</h5>
       <div *ngIf="video.youtubeUrl" class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" width="560" height="315" [src]="video.youtubeUrl | safe"

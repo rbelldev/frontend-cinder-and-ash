@@ -13,6 +13,7 @@ export class MythicRosterTableComponent {
   @Input() memberList: GuildMember[];
   @Input() label: string;
   @Input() tierSlots:string[];
+  @Input() currentRaidFilter:string;
 
   constructor(private router:Router){}
 
