@@ -38,7 +38,7 @@ export class TierAssessment {
 
   hasLeggo(slotName: string): boolean {
     const equippedItemInSlot = this.character.equippedItems[slotName];
-    return equippedItemInSlot.itemLevel == 970;
+    return equippedItemInSlot.itemLevel == 970 || equippedItemInSlot.itemLevel == 1000;
   }
 
   getTierGroup(): string {
