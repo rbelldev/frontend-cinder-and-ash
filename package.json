@@ -12,7 +12,6 @@
     "local": "ng serve",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "move-files": "node move-production-files.js",
     "preinstall": "npm cache clean",
     "postinstall": "ng build"
   },
