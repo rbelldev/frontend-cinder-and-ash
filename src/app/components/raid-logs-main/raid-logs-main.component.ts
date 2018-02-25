@@ -21,7 +21,7 @@ export class RaidLogsMainComponent implements OnInit{
     this.logResults = allResults;
   }
 
-  navigateToCheckMyWow(id:string){
+  navigateToWoWAnalyzer(id:string){
     window.open(`https://wowanalyzer.com/report/${id}`,'_blank')
   }
 
