@@ -22,7 +22,7 @@ export class RaidLogsMainComponent implements OnInit{
   }
 
   navigateToCheckMyWow(id:string){
-    window.open(`http://www.checkmywow.com/reports/${id}`,'_blank')
+    window.open(`https://wowanalyzer.com/report/${id}`,'_blank')
   }
 
   navigateToWarcraftLogs(id:string){
