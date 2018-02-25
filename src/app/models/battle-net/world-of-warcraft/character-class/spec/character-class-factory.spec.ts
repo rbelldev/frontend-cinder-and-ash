@@ -6,11 +6,11 @@ import {Priest} from "../character-classes/priest";
 import {DeathKnight} from "../character-classes/death-knight";
 import {Shaman} from "../character-classes/shaman";
 import {Mage} from "../character-classes/mage";
-// import {Warlock} from "../character-classes/warlock";
 import {Monk} from "../character-classes/monk";
 import {DemonHunter} from "../character-classes/demon-hunter";
 import {Druid} from "../character-classes/druid";
 import {CharacterClassFactory} from "../character-class-factory";
+import {Warlock} from "../character-classes/warlock";
 
 describe('Character Class Factory', () => {
 
@@ -24,7 +24,7 @@ describe('Character Class Factory', () => {
     new DeathKnight(),
     new Shaman(),
     new Mage(),
-    // new Warlock(),
+    new Warlock(),
     new Monk(),
     new Druid(),
     new DemonHunter()

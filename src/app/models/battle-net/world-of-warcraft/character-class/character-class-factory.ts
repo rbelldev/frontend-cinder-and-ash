@@ -7,10 +7,10 @@ import {Priest} from "./character-classes/priest";
 import {DeathKnight} from "./character-classes/death-knight";
 import {Shaman} from "./character-classes/shaman";
 import {Mage} from "./character-classes/mage";
-// import {Warlock} from "./character-classes/warlock";
 import {Monk} from "./character-classes/monk";
 import {Druid} from "./character-classes/druid";
 import {DemonHunter} from "./character-classes/demon-hunter";
+import {Warlock} from "./character-classes/warlock";
 
 export class CharacterClassFactory {
 
@@ -35,7 +35,7 @@ export class CharacterClassFactory {
       case 8:
         return new Mage();
       case 9:
-        // return new Warlock();
+        return new Warlock();
       case 10:
         return new Monk();
       case 11:
