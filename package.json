@@ -14,7 +14,7 @@
     "e2e": "protractor",
     "move-files": "node move-production-files.js",
     "preinstall": "",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build"
   },
   "private": true,
   "dependencies": {
