@@ -19,10 +19,11 @@ describe('Character Class Specialization', () => {
   it('should get active spec', () => {
     const expectedActiveCharacterClassSpecialization = new CharacterClassSpecialization('Unholy', 'DPS', true);
 
-    const characterClass = new CharacterClass('name', [
+    const classSpec = [
       new CharacterClassSpecialization('Frost', 'DPS', false),
       expectedActiveCharacterClassSpecialization
-    ]);
+    ];
+    const characterClass = new CharacterClass('name', classSpec, "", "");
 
     expect(characterClass.getActiveSpec()).toEqual(expectedActiveCharacterClassSpecialization);
   });
