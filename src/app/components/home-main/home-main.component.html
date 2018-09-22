@@ -15,9 +15,10 @@
 
           <div class="alert alert-danger">
             <h4>REQUIRED Addons</h4>
-            <p>RC Loot Council (or you don't get loot!)</p>
             <p>Deadly Boss Mods</p>
             <p>Weak Auras</p>
+            <p>Angry Assignments</p>
+            <p>Cooldown Tracker</p>
             <p>*Others might be added at officer discretion depending on need</p>
           </div>
 
@@ -33,24 +34,13 @@
           </div>
 
         </div>
-
-        <div class="col-md-12">
-
-          <div class="alert alert-success">
-            <h4>Core Gear Info</h4>
-            <p>Core Gear Priority and BiS <a href="http://tinyurl.com/cinderloot2">here</a></p>
-          </div>
-
-        </div>
       </div>
     </div>
 
 
-    <h2 style="margin-bottom: 20px">Antorus, the Burning Throne Videos</h2>
+    <h2 style="margin-bottom: 20px">Uldir Videos</h2>
     <div id="{{video.id}}" *ngFor="let video of raidVideos">
       <h3>{{video.bossName}}</h3>
-      <h4 *ngIf="video.wowheadLink"><a [href]="video.wowheadLink">Wowhead Guide</a></h4>
-      <h5 *ngIf="video.youtubeUrl && video.ptr">*PTR Footage</h5>
       <div *ngIf="video.youtubeUrl" class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" width="560" height="315" [src]="video.youtubeUrl | safe"
                 frameborder="0" allowfullscreen></iframe>

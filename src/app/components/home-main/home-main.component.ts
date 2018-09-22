@@ -11,77 +11,44 @@ export class HomeMainComponent {
 
   raidVideos = [
     {
-      id: "garothi-worldbreaker",
-      bossName: "Garothi Worldbreaker",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}_p_J8TwJtAw`,
-      wowheadLink: `${this.wowheadLinkBaseUrl}garothi-worldbreaker-antorus-the-burning-throne-raid-strategy-guide`,
-      ptr:true
+      id: "taloc",
+      bossName: "Taloc",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}CRR9glyQYUg`,
     },
     {
-      id: "felhounds-of-sargeras",
-      bossName: "Felhounds of Sargeras",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}DejkuitW6UI`,
-      wowheadLink: `${this.wowheadLinkBaseUrl}felhounds-of-sargeras-antorus-the-burning-throne-raid-strategy-guide`,
-      ptr:true
+      id: "mother",
+      bossName: "MOTHER",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}d3Et9e8OYMI`,
     },
     {
-      id: "antoran-high-command",
-      bossName: "Antoran High Command",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}2i_nKvR7878`,
-      wowheadLink: `${this.wowheadLinkBaseUrl}antoran-high-command-antorus-raid-strategy-guide`,
-      ptr:true
+      id: "fetid-devourer",
+      bossName: "Fetid Devourer",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}H-8LizAiKbw`,
     },
     {
-      id: "portal-keeper-hasabel",
-      bossName: "Portal Keeper Hasabel",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}rrKgZXSIUo0`,
-      ptr:true
+      id: "vectis",
+      bossName: "vectis",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}oJK7an7qlmA`,
     },
     {
-      id: "eonar-the-life-binder",
-      bossName: "Eonar the Life-Binder",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}TQ4o9kHEess`,
-      ptr:true
+      id: "zekvoz",
+      bossName: "Zek'voz",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}8uPeKRXuiTQ`,
     },
     {
-      id: "imonar-the-soulhunter",
-      bossName: "Imonar the Soulhunter",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}DfSqXOVs0mY`,
-      ptr:true
+      id: "zul-reborn",
+      bossName: "Zul Reborn",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}VpeAfPT51oQ`,
     },
     {
-      id: "kingaroth",
-      bossName: "Kin'garoth",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}CiznHWgehbA`,
-      ptr:true
+      id: "mythrax",
+      bossName: "Mythrax",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}OKz4tnYNvs8`,
     },
     {
-      id: "varimathras",
-      bossName: "Varimathras",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}UsL_vUIVTv8`,
-      wowheadLink: `${this.wowheadLinkBaseUrl}varimathras-antorus-the-burning-throne-raid-strategy-guide`,
-      ptr:true
-    },
-    {
-      id: "the-coven-of-shivarra",
-      bossName: "The Coven of Shivarra",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}ncpVUaFNYJE`,
-      wowheadLink: `${this.wowheadLinkBaseUrl}coven-of-shivarra-antorus-the-burning-throne-raid-strategy-guide`,
-      ptr:true
-    },
-    {
-      id: "aggramar",
-      bossName: "aggramar",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}ii02D6XkLeM`,
-      wowheadLink: `${this.wowheadLinkBaseUrl}aggramar-antorus-the-burning-throne-raid-strategy-guide`,
-      ptr:true
-    },
-    {
-      id: "argus-the-unmaker",
-      bossName: "Argus the Unmaker",
-      youtubeUrl: `${this.youtubeEmbedBassUrl}H0lEq7RPVx4`,
-      wowheadLink: `${this.wowheadLinkBaseUrl}argus-the-unmaker-antorus-the-burning-throne-raid-strategy-guide`,
-      ptr:true
+      id: "ghuun",
+      bossName: "G'huun",
+      youtubeUrl: `${this.youtubeEmbedBassUrl}fxMamsFlplk`,
     }
   ];
 

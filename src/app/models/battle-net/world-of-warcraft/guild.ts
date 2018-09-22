@@ -80,11 +80,11 @@ export class Guild {
   achievementPoints: number;
   guildMembers: GuildMember[] = [];
 
-  mythicTanks: string[] = ['Embersong', 'Knutè'];
-  mythicHeals: string[] = ['Cattìbrie', 'Felurìan', 'Synthoras', 'Drkiller', 'Iyin'];
-  mythicRanged: string[] = ['Broxalar', 'Gingerbrows', 'Twinshadow', 'Luuma', 'Schwarzkopf', 'Saerenrae', 'Revërie', 'Felgood'];
-  mythicMelee: string[] = ['Sçythér', 'Supbae', 'Djeckt'];
-  mythicTrials: string[] = ['Haraf'];
-  mythicBench: string[] = ['Petdétective', 'Legendshot'];
+  mythicTanks: string[] = ['Kñute', 'Harmless'];
+  mythicHeals: string[] = ['Iyin', 'Rawry', 'Aborn', 'Synthoras', 'Realfair'];
+  mythicRanged: string[] = ['Lacunia', 'Broxalar', 'Pillöw', 'Twinshadow', 'Ucriturpantz', 'Cínder'];
+  mythicMelee: string[] = ['Ninjaknight', 'Kelthis', 'Ryanpage', 'Lyciri', 'Sçythér', 'Slippywrist', 'Camil'];
+  mythicTrials: string[] = [];
+  mythicBench: string[] = [];
 
 }

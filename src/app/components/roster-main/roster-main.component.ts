@@ -32,7 +32,6 @@ export class RosterMainComponent {
 
   tierGroups:string[] = ['Conqueror', 'Protector', 'Vanquisher'];
   tierSlots:string[] = ['Head', 'Shoulder', 'Chest', 'Back', 'Hands', 'Legs'];
-  raids:string[] = ['Tomb of Sargeras', 'Antorus, the Burning Throne'];
   activeTierSlots:string[] = [];
 
   constructor(private battleNetService: BattleNetService, private guildMemberSorter: GuildMemberSorter) {}

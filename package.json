@@ -12,7 +12,7 @@
     "local": "ng serve",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "preinstall": "npm cache clean",
+    "preinstall": "npm cache verify",
     "postinstall": "ng build"
   },
   "private": true,

@@ -2,17 +2,21 @@
 
 <div>
 
-  <table class="table table-striped table-bordered table-responsive" style="table-layout: auto">
+  <table class="table table-striped table-bordered table-responsive" style="table-layout: fixed">
 
     <thead>
 
       <tr style="color: white">
-        <th class="">iLvl</th>
-        <th class="col-md-2">Name</th>
-        <th class="col-md-2">Class</th>
-        <th class="col-md-1" style="text-align: center" *ngFor="let tierSlot of tierSlots">{{tierSlot}}</th>
-        <th class="col-md-1" style="text-align: center">Trinket</th>
-        <th class="col-md-1" style="text-align: center">Trinket</th>
+        <th class="header">iLvl</th>
+        <th class="header">Name</th>
+        <th class="header">Class</th>
+        <th class="header" style="text-align: center">Main Hand</th>
+        <th class="header" style="text-align: center">Off Hand</th>
+        <th class="header" style="text-align: center" *ngFor="let tierSlot of tierSlots">{{tierSlot}}</th>
+        <th class="header" style="text-align: center">Ring</th>
+        <th class="header" style="text-align: center">Ring</th>
+        <th class="header" style="text-align: center">Trinket</th>
+        <th class="header" style="text-align: center">Trinket</th>
       </tr>
 
     </thead>
@@ -27,16 +31,41 @@
         <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.name}}</td>
         <td (click)="navigateToCharacterDetails(guildMember.character.name)">{{guildMember.character.characterClass.getActiveSpec().name}} {{guildMember.character.characterClass.name}}</td>
 
+        <td align="center">
+          <a href="http://www.wowhead.com/item={{guildMember.character.equippedItems['mainHand'].id}}"
+             rel="{{generateRelBonusForWowhead(guildMember.character.equippedItems['mainHand'])}}"
+             class="q{{guildMember.character.equippedItems['mainHand'].quality}}">{{guildMember.character.equippedItems['mainHand'].itemLevel}}</a>
+        </td>
+
+        <td align="center">
+          <a *ngIf="guildMember.character.equippedItems['offHand']" href="http://www.wowhead.com/item={{guildMember.character.equippedItems['offHand'].id}}"
+             rel="{{generateRelBonusForWowhead(guildMember.character.equippedItems['offHand'])}}"
+             class="q{{guildMember.character.equippedItems['offHand'].quality}}">{{guildMember.character.equippedItems['offHand'].itemLevel}}</a>
+        </td>
+
         <td *ngFor="let tierSlot of tierSlots" align="center">
 
-          <a *ngIf="guildMember.character.tierAssessment.hasPiece(tierSlot.toLowerCase(), currentRaidFilter)" href="http://www.wowhead.com/item={{guildMember.character.equippedItems[tierSlot.toLowerCase()].id}}"
+          <a href="http://www.wowhead.com/item={{guildMember.character.equippedItems[tierSlot.toLowerCase()].id}}"
              rel='{{generateRelBonusForWowhead(guildMember.character.equippedItems[tierSlot.toLowerCase()])}}'
              class="q{{guildMember.character.equippedItems[tierSlot.toLowerCase()].quality}}">{{guildMember.character.equippedItems[tierSlot.toLowerCase()].itemLevel}}</a>
 
-          <a *ngIf="!guildMember.character.tierAssessment.hasPiece(tierSlot.toLowerCase(), currentRaidFilter) && guildMember.character.tierAssessment.hasLeggo(tierSlot.toLowerCase())" href="http://www.wowhead.com/item={{guildMember.character.equippedItems[tierSlot.toLowerCase()].id}}"
-             rel='{{generateRelBonusForWowhead(guildMember.character.equippedItems[tierSlot.toLowerCase()])}}'
-             class="q{{guildMember.character.equippedItems[tierSlot.toLowerCase()].quality}}">{{guildMember.character.equippedItems[tierSlot.toLowerCase()].itemLevel}}</a>
         </td>
+
+
+        <td align="center">
+          <a href="http://www.wowhead.com/item={{guildMember.character.equippedItems['finger1'].id}}"
+             rel="{{generateRelBonusForWowhead(guildMember.character.equippedItems['finger1'])}}"
+             class="q{{guildMember.character.equippedItems['finger1'].quality}}">{{guildMember.character.equippedItems['finger1'].itemLevel}}</a>
+        </td>
+
+        <td align="center">
+          <a href="http://www.wowhead.com/item={{guildMember.character.equippedItems['finger2'].id}}"
+             rel="{{generateRelBonusForWowhead(guildMember.character.equippedItems['finger2'])}}"
+             class="q{{guildMember.character.equippedItems['finger2'].quality}}">{{guildMember.character.equippedItems['finger2'].itemLevel}}</a>
+        </td>
+
+
+
 
         <td align="center">
           <a href="http://www.wowhead.com/item={{guildMember.character.equippedItems['trinket1'].id}}"
